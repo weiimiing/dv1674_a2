@@ -1,0 +1,9 @@
+stage,program,input,batches,executions,mean_elapsed_seconds,median_elapsed_seconds,avg_cpu_percent,avg_user_seconds,avg_system_seconds,max_rss_kb,correctness
+baseline-compiler-opt,pearson,128.data,5,1000,0.019720,0.019300,136.00,0.012170,0.014650,4724,PASS
+baseline-compiler-opt,pearson,256.data,5,200,0.094300,0.093250,60.07,0.041950,0.014700,5420,PASS
+baseline-compiler-opt,pearson,512.data,5,15,0.572667,0.576667,97.21,0.477333,0.079333,9432,PASS
+baseline-compiler-opt,pearson,1024.data,5,5,3.580000,3.560000,97.99,3.186000,0.322000,24804,PASS
+baseline-compiler-opt,blur,im1.ppm,5,50,0.223000,0.228000,84.13,0.156000,0.031600,16960,PASS
+baseline-compiler-opt,blur,im2.ppm,5,25,0.450800,0.450000,67.52,0.272400,0.032000,25604,PASS
+baseline-compiler-opt,blur,im3.ppm,5,15,0.754667,0.770000,84.28,0.560667,0.075333,37232,PASS
+baseline-compiler-opt,blur,im4.ppm,5,5,4.068000,3.890000,91.94,3.336000,0.404000,135996,PASS

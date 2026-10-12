@@ -35,8 +35,8 @@ run_callgrind="${RUN_CALLGRIND:-1}"
 
 pearson_gprof_size="${PEARSON_GPROF_SIZE:-1024}"
 blur_gprof_image="${BLUR_GPROF_IMAGE:-im4}"
-pearson_callgrind_size="${PEARSON_CALLGRIND_SIZE:-256}"
-blur_callgrind_image="${BLUR_CALLGRIND_IMAGE:-im1}"
+pearson_callgrind_size="${PEARSON_CALLGRIND_SIZE:-512}"
+blur_callgrind_image="${BLUR_CALLGRIND_IMAGE:-im2}"
 
 timing_raw="$results_dir/timing_raw.csv"
 memory_raw="$results_dir/memory_raw.csv"
