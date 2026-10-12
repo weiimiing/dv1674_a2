@@ -1,0 +1,32 @@
+==31264== Callgrind, a call-graph generating cache profiler
+==31264== Copyright (C) 2002-2017, and GNU GPL'd, by Josef Weidendorfer et al.
+==31264== Using Valgrind-3.26.0 and LibVEX; rerun with -h for copyright info
+==31264== Command: /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/baseline/pearson/pearson /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/baseline/pearson/data/256.data /tmp/a2-stage-profile.CvXsyU/pearson_callgrind_output.data
+==31264== 
+--31264-- warning: L3 cache found, using its data for the LL simulation.
+--31264-- warning: specified LL cache: line_size 64  assoc 1  total_size 100,663,296
+--31264-- warning: simulated LL cache: line_size 64  assoc 2  total_size 134,217,728
+==31264== For interactive control, run 'callgrind_control -h'.
+==31264== 
+==31264== Events    : Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
+==31264== Collected : 3916878312 1808018177 616008109 121209 1109776 40949 2903 7927 30827 202720359 1239477 4725793 2007960
+==31264== 
+==31264== I   refs:      3,916,878,312
+==31264== I1  misses:          121,209
+==31264== LLi misses:            2,903
+==31264== I1  miss rate:          0.00%
+==31264== LLi miss rate:          0.00%
+==31264== 
+==31264== D   refs:      2,424,026,286  (1,808,018,177 rd + 616,008,109 wr)
+==31264== D1  misses:        1,150,725  (    1,109,776 rd +      40,949 wr)
+==31264== LLd misses:           38,754  (        7,927 rd +      30,827 wr)
+==31264== D1  miss rate:           0.0% (          0.1%   +         0.0%  )
+==31264== LLd miss rate:           0.0% (          0.0%   +         0.0%  )
+==31264== 
+==31264== LL refs:           1,271,934  (    1,230,985 rd +      40,949 wr)
+==31264== LL misses:            41,657  (       10,830 rd +      30,827 wr)
+==31264== LL miss rate:            0.0% (          0.0%   +         0.0%  )
+==31264== 
+==31264== Branches:        207,446,152  (  202,720,359 cond +   4,725,793 ind)
+==31264== Mispredicts:       3,247,437  (    1,239,477 cond +   2,007,960 ind)
+==31264== Mispred rate:            1.6% (          0.6%     +        42.5%   )

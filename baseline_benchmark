@@ -1,0 +1,67 @@
+(
+# set -e
+
+# mkdir -p results/reference/pearson
+# mkdir -p results/reference/blur
+# mkdir -p results/baseline
+
+# make -C versions/baseline/pearson clean
+# make -C versions/baseline/pearson
+
+# make -C versions/baseline/blur clean
+# make -C versions/baseline/blur
+
+# Create reference outputs
+# for size in 128 256 512 1024
+# do
+#     ./versions/baseline/pearson/pearson \
+#         "versions/baseline/pearson/data/${size}.data" \
+#         "results/reference/pearson/${size}.data"
+# done
+
+# for image in im1 im2 im3 im4
+# do
+#     ./versions/baseline/blur/blur 15 \
+#         "versions/baseline/blur/data/${image}.ppm" \
+#         "results/reference/blur/${image}.ppm"
+# done
+
+# Create measurement table
+summary="results/baseline/summary.csv"
+printf "program,input,run,elapsed_seconds,cpu,max_rss_kb\n" > "$summary"
+
+# Benchmark Pearson
+for size in 128 256 512 1024
+do
+    for run in 1 2 3 4 5
+    do
+        echo "Pearson: ${size}.data, run ${run}"
+
+        /usr/bin/time \
+            -f "pearson,${size}.data,${run},%e,%P,%M" \
+            -a -o "$summary" \
+            ./versions/baseline/pearson/pearson \
+            "versions/baseline/pearson/data/${size}.data" \
+            "/tmp/a2_pearson_${size}.data"
+    done
+done
+
+# Benchmark Blur
+for image in im1 im2 im3 im4
+do
+    for run in 1 2 3 4 5
+    do
+        echo "Blur: ${image}.ppm, run ${run}"
+
+        /usr/bin/time \
+            -f "blur,${image}.ppm,${run},%e,%P,%M" \
+            -a -o "$summary" \
+            ./versions/baseline/blur/blur 15 \
+            "versions/baseline/blur/data/${image}.ppm" \
+            "/tmp/a2_blur_${image}.ppm"
+    done
+done
+
+echo "Finished. Results:"
+column -s, -t "$summary"
+)
