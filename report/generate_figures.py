@@ -3,6 +3,7 @@
 import csv
 import html
 import math
+import os
 from pathlib import Path
 
 
@@ -10,9 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "report"
 FIGURES = REPORT / "figures"
 BASELINE_SUMMARY = ROOT / "results/profiling/baseline-compiler-opt/summary.csv"
-OPT1_SUMMARY = ROOT / "results/profiling/opt1/summary.csv"
 BASELINE_CALLGRIND = ROOT / "results/profiling/baseline-compiler-opt/callgrind_metrics.csv"
-OPT1_CALLGRIND = ROOT / "results/profiling/opt1/callgrind_metrics.csv"
 
 COLORS = {
     "blue": "#2563a6",
@@ -29,6 +28,28 @@ COLORS = {
 def read_csv(path):
     with path.open(newline="", encoding="utf-8") as stream:
         return list(csv.DictReader(stream))
+
+
+def resolve_opt1_directory():
+    profiling_root = ROOT / "results/profiling"
+    requested_stage = os.environ.get("OPT1_STAGE")
+    if requested_stage:
+        stage_dir = profiling_root / requested_stage
+        if not (stage_dir / "summary.csv").is_file() or not (stage_dir / "callgrind_metrics.csv").is_file():
+            raise FileNotFoundError(
+                f"OPT1_STAGE={requested_stage!r} does not contain summary.csv and callgrind_metrics.csv"
+            )
+        return stage_dir
+
+    candidates = [
+        path for path in profiling_root.glob("opt1*")
+        if (path / "summary.csv").is_file() and (path / "callgrind_metrics.csv").is_file()
+    ]
+    if not candidates:
+        raise FileNotFoundError(
+            "No opt1* profiling directory contains summary.csv and callgrind_metrics.csv"
+        )
+    return max(candidates, key=lambda path: (path / "summary.csv").stat().st_mtime)
 
 
 def esc(value):
@@ -145,6 +166,42 @@ def grouped_log_bars(lines, x, y, width, height, labels, first, second, first_na
     lines.append(f'<text x="{x + 12}" y="{top + plot_height / 2:.1f}" transform="rotate(-90 {x + 12} {top + plot_height / 2:.1f})" text-anchor="middle" class="axis">Median seconds (log scale)</text>')
 
 
+def grouped_percent_bars(lines, x, y, width, height, labels, first, second, first_name, second_name, maximum):
+    left = x + 64
+    right = x + width - 20
+    top = y + 16
+    bottom = y + height - 64
+    plot_height = bottom - top
+    plot_width = right - left
+
+    for tick in range(5):
+        fraction = tick / 4
+        yy = bottom - fraction * plot_height
+        value = fraction * maximum
+        lines.append(f'<line x1="{left}" y1="{yy:.1f}" x2="{right}" y2="{yy:.1f}" stroke="{COLORS["grid"]}"/>')
+        lines.append(f'<text x="{left - 9}" y="{yy + 4:.1f}" text-anchor="end" class="axis">{value:.0f}%</text>')
+
+    slot = plot_width / len(labels)
+    bar_width = slot * 0.24
+    for index, label in enumerate(labels):
+        center = left + slot * (index + 0.5)
+        for offset, value, color in [
+            (-bar_width * 0.58, first[index], COLORS["blue"]),
+            (bar_width * 0.58, second[index], COLORS["coral"]),
+        ]:
+            bx = center + offset - bar_width / 2
+            bar_height = value / maximum * plot_height
+            by = bottom - bar_height
+            lines.append(f'<rect x="{bx:.1f}" y="{by:.1f}" width="{bar_width:.1f}" height="{bar_height:.1f}" rx="2" fill="{color}"/>')
+            lines.append(f'<text x="{bx + bar_width / 2:.1f}" y="{by - 6:.1f}" text-anchor="middle" class="value">{value:.0f}%</text>')
+        lines.append(f'<text x="{center:.1f}" y="{bottom + 21}" text-anchor="middle" class="label">{esc(label)}</text>')
+
+    legend_y = y + height - 18
+    lines.append(f'<rect x="{left}" y="{legend_y - 12}" width="14" height="14" fill="{COLORS["blue"]}"/><text x="{left + 21}" y="{legend_y}" class="label">{esc(first_name)}</text>')
+    lines.append(f'<rect x="{left + 150}" y="{legend_y - 12}" width="14" height="14" fill="{COLORS["coral"]}"/><text x="{left + 171}" y="{legend_y}" class="label">{esc(second_name)}</text>')
+    lines.append(f'<text x="{x + 12}" y="{top + plot_height / 2:.1f}" transform="rotate(-90 {x + 12} {top + plot_height / 2:.1f})" text-anchor="middle" class="axis">Relative event count</text>')
+
+
 def line_chart(lines, x, y, width, height, labels, values, color, maximum, unit):
     left = x + 55
     right = x + width - 24
@@ -174,10 +231,11 @@ def line_chart(lines, x, y, width, height, labels, values, color, maximum, unit)
 
 def main():
     FIGURES.mkdir(parents=True, exist_ok=True)
+    opt1_directory = resolve_opt1_directory()
     baseline = read_csv(BASELINE_SUMMARY)
-    opt1 = read_csv(OPT1_SUMMARY)
+    opt1 = read_csv(opt1_directory / "summary.csv")
     baseline_callgrind = read_csv(BASELINE_CALLGRIND)
-    opt1_callgrind = read_csv(OPT1_CALLGRIND)
+    opt1_callgrind = read_csv(opt1_directory / "callgrind_metrics.csv")
 
     baseline_by_program = {
         program: [row for row in baseline if row["program"] == program]
@@ -258,6 +316,45 @@ def main():
                   [label for label, _ in callgrind_fields], reductions,
                   COLORS["teal"], 100.0, "Reduction (%)", 1)
     write_svg("pearson_callgrind_reduction.svg", lines)
+
+    blur_o2 = [row for row in baseline if row["program"] == "blur"]
+    blur_opt1 = [row for row in opt1 if row["program"] == "blur"]
+    blur_labels = [row["input"].split(".")[0] for row in blur_o2]
+    blur_o2_medians = [float(row["median_elapsed_seconds"]) for row in blur_o2]
+    blur_opt1_medians = [float(row["median_elapsed_seconds"]) for row in blur_opt1]
+
+    lines = svg_start(1000, 560)
+    panel_title(lines, 32, 34, "Blur runtime after Optimization 1", "Radius 15; both versions compiled with -O2; lower is better")
+    grouped_log_bars(
+        lines, 30, 76, 940, 450, blur_labels, blur_o2_medians, blur_opt1_medians,
+        "O2 source baseline", "Optimization 1"
+    )
+    write_svg("blur_opt1_runtime.svg", lines)
+
+    blur_speedups = [before / after for before, after in zip(blur_o2_medians, blur_opt1_medians)]
+    lines = svg_start(1000, 500)
+    panel_title(lines, 32, 34, "Blur Optimization 1 speedup over -O2 baseline", "Speedup calculated from median elapsed time")
+    line_chart(lines, 34, 80, 920, 380, blur_labels, blur_speedups, COLORS["teal"], 2.0, "Speedup")
+    write_svg("blur_opt1_speedup.svg", lines)
+
+    base_blur = next(row for row in baseline_callgrind if row["program"] == "blur")
+    opt1_blur = next(row for row in opt1_callgrind if row["program"] == "blur")
+    normalized_baseline = [100.0 for _ in callgrind_fields]
+    normalized_opt1 = [
+        100 * float(opt1_blur[field]) / float(base_blur[field])
+        for _, field in callgrind_fields
+    ]
+    lines = svg_start(1100, 560)
+    panel_title(
+        lines, 32, 34, "Blur Callgrind events after Optimization 1",
+        "Matched im2.ppm input; baseline normalized to 100%; lower is better"
+    )
+    grouped_percent_bars(
+        lines, 28, 80, 1044, 440,
+        [label for label, _ in callgrind_fields], normalized_baseline, normalized_opt1,
+        "O2 source baseline", "Optimization 1", 300.0
+    )
+    write_svg("blur_callgrind_comparison.svg", lines)
 
 
 if __name__ == "__main__":
