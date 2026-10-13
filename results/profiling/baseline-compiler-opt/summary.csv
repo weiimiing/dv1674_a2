@@ -7,3 +7,4 @@ baseline-compiler-opt,blur,im1.ppm,5,50,0.223000,0.228000,84.13,0.156000,0.03160
 baseline-compiler-opt,blur,im2.ppm,5,25,0.450800,0.450000,67.52,0.272400,0.032000,25604,PASS
 baseline-compiler-opt,blur,im3.ppm,5,15,0.754667,0.770000,84.28,0.560667,0.075333,37232,PASS
 baseline-compiler-opt,blur,im4.ppm,5,5,4.068000,3.890000,91.94,3.336000,0.404000,135996,PASS
+

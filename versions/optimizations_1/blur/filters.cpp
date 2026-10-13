@@ -27,15 +27,10 @@ namespace Filter
         const auto width  { m.get_x_size() };
         const auto height { m.get_y_size() };
 
-        // Allocate scratch and dst at the actual image size.
-        // The original used PPM::max_dimension (always 3000x3000) for
-        // scratch, and copied the whole input into dst with `auto dst{m}`.
-        // That copy was 62.5% of the runtime in gprof, so we skip it
-        // dst is written completely by pass 2 anyway
-        Matrix scratch{ width, height };
-        Matrix dst    { width, height };
+        Matrix scratch{ width, height, m.get_color_max() };  // only as big as the image
+        Matrix dst{ width, height, m.get_color_max() };  // empty, not a copy of m
 
-        // The Gaussian weights only depend on radius, so compute them once
+        // The Gaussian weights only depend on radius, compute once befor loops
         double w[Gauss::max_radius]{};
         Gauss::get_weights(radius, w);
 
