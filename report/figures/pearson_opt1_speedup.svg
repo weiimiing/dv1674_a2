@@ -22,18 +22,18 @@ text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing:
 <text x="81" y="159.6" text-anchor="end" class="axis">4.0</text>
 <line x1="89" y1="90.0" x2="930" y2="90.0" stroke="#d9e0e6"/>
 <text x="81" y="94.0" text-anchor="end" class="axis">5.0</text>
-<polyline points="89.0,318.7 369.3,277.8 649.7,207.8 930.0,127.0" fill="none" stroke="#d55e4f" stroke-width="4"/>
-<circle cx="89.0" cy="318.7" r="6" fill="#d55e4f"/>
-<text x="89.0" y="306.7" text-anchor="middle" class="value">1.51x</text>
+<polyline points="89.0,333.6 369.3,283.2 649.7,208.8 930.0,167.6" fill="none" stroke="#d55e4f" stroke-width="4"/>
+<circle cx="89.0" cy="333.6" r="6" fill="#d55e4f"/>
+<text x="89.0" y="321.6" text-anchor="middle" class="value">1.29x</text>
 <text x="89.0" y="439" text-anchor="middle" class="label">128</text>
-<circle cx="369.3" cy="277.8" r="6" fill="#d55e4f"/>
-<text x="369.3" y="265.8" text-anchor="middle" class="value">2.14x</text>
+<circle cx="369.3" cy="283.2" r="6" fill="#d55e4f"/>
+<text x="369.3" y="271.2" text-anchor="middle" class="value">2.06x</text>
 <text x="369.3" y="439" text-anchor="middle" class="label">256</text>
-<circle cx="649.7" cy="207.8" r="6" fill="#d55e4f"/>
-<text x="649.7" y="195.8" text-anchor="middle" class="value">3.20x</text>
+<circle cx="649.7" cy="208.8" r="6" fill="#d55e4f"/>
+<text x="649.7" y="196.8" text-anchor="middle" class="value">3.19x</text>
 <text x="649.7" y="439" text-anchor="middle" class="label">512</text>
-<circle cx="930.0" cy="127.0" r="6" fill="#d55e4f"/>
-<text x="930.0" y="115.0" text-anchor="middle" class="value">4.44x</text>
+<circle cx="930.0" cy="167.6" r="6" fill="#d55e4f"/>
+<text x="930.0" y="155.6" text-anchor="middle" class="value">3.82x</text>
 <text x="930.0" y="439" text-anchor="middle" class="label">1024</text>
 <text x="46" y="254.0" transform="rotate(-90 46 254.0)" text-anchor="middle" class="axis">Speedup</text>
 </svg>
