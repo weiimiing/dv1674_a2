@@ -1,9 +1,0 @@
-program,input,max_rss_kb,direct_elapsed_seconds,user_seconds,system_seconds
-pearson,128.data,4568,0.01,0.00,0.01
-pearson,256.data,4800,0.09,0.12,0.05
-pearson,512.data,7240,0.13,0.00,0.00
-pearson,1024.data,16468,0.82,0.22,0.10
-blur,im1.ppm,16976,0.17,0.12,0.02
-blur,im2.ppm,25420,0.73,0.59,0.03
-blur,im3.ppm,37232,0.77,0.80,0.01
-blur,im4.ppm,136084,4.15,3.84,0.22
