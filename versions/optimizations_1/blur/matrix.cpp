@@ -39,6 +39,18 @@ Matrix::Matrix(unsigned dimension)
 {
 }
 
+// Same as the constructor above, but takes width and height separately.
+// Needed because images like im3.ppm are not square (1600x1200).
+Matrix::Matrix(unsigned x_size, unsigned y_size, unsigned color_max)
+    : R { new unsigned char[x_size * y_size] }
+    , G { new unsigned char[x_size * y_size] }
+    , B { new unsigned char[x_size * y_size] }
+    , x_size { x_size }
+    , y_size { y_size }
+    , color_max { color_max }
+{
+}
+
 Matrix::Matrix(const Matrix& other)
     : R { new unsigned char[other.x_size * other.y_size] }
     , G { new unsigned char[other.x_size * other.y_size] }

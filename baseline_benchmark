@@ -43,6 +43,7 @@ do
             ./versions/baseline/pearson/pearson \
             "versions/baseline/pearson/data/${size}.data" \
             "/tmp/a2_pearson_${size}.data"
+        
     done
 done
 

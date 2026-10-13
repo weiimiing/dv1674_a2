@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="540" viewBox="0 0 1100 540">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing: 0; }
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #586675; }
+.axis { font-size: 12px; fill: #586675; }
+.label { font-size: 13px; }
+.value { font-size: 12px; font-weight: 700; }
+</style>
+<rect width="1100" height="540" fill="#ffffff"/>
+<text x="32" y="34" class="title">Baseline peak resident memory</text>
+<text x="32" y="56" class="subtitle">Maximum RSS from GNU time; panels use separate scales</text>
+<line x1="78" y1="462.0" x2="532" y2="462.0" stroke="#d9e0e6"/>
+<text x="70" y="466.0" text-anchor="end" class="axis">0.0</text>
+<line x1="78" y1="368.5" x2="532" y2="368.5" stroke="#d9e0e6"/>
+<text x="70" y="372.5" text-anchor="end" class="axis">7.0</text>
+<line x1="78" y1="275.0" x2="532" y2="275.0" stroke="#d9e0e6"/>
+<text x="70" y="279.0" text-anchor="end" class="axis">14.0</text>
+<line x1="78" y1="181.5" x2="532" y2="181.5" stroke="#d9e0e6"/>
+<text x="70" y="185.5" text-anchor="end" class="axis">21.0</text>
+<line x1="78" y1="88.0" x2="532" y2="88.0" stroke="#d9e0e6"/>
+<text x="70" y="92.0" text-anchor="end" class="axis">28.0</text>
+<rect x="103.0" y="400.4" width="63.6" height="61.6" rx="2" fill="#c58b18"/>
+<text x="134.8" y="393.4" text-anchor="middle" class="value">4.6</text>
+<text x="134.8" y="482.0" text-anchor="middle" class="label">128</text>
+<rect x="216.5" y="391.3" width="63.6" height="70.7" rx="2" fill="#c58b18"/>
+<text x="248.2" y="384.3" text-anchor="middle" class="value">5.3</text>
+<text x="248.2" y="482.0" text-anchor="middle" class="label">256</text>
+<rect x="330.0" y="339.0" width="63.6" height="123.0" rx="2" fill="#c58b18"/>
+<text x="361.8" y="332.0" text-anchor="middle" class="value">9.2</text>
+<text x="361.8" y="482.0" text-anchor="middle" class="label">512</text>
+<rect x="443.5" y="138.5" width="63.6" height="323.5" rx="2" fill="#c58b18"/>
+<text x="475.2" y="131.5" text-anchor="middle" class="value">24.2</text>
+<text x="475.2" y="482.0" text-anchor="middle" class="label">1024</text>
+<text x="34" y="275.0" transform="rotate(-90 34 275.0)" text-anchor="middle" class="axis">Pearson MiB</text>
+<line x1="614" y1="462.0" x2="1068" y2="462.0" stroke="#d9e0e6"/>
+<text x="606" y="466.0" text-anchor="end" class="axis">0.0</text>
+<line x1="614" y1="368.5" x2="1068" y2="368.5" stroke="#d9e0e6"/>
+<text x="606" y="372.5" text-anchor="end" class="axis">35.0</text>
+<line x1="614" y1="275.0" x2="1068" y2="275.0" stroke="#d9e0e6"/>
+<text x="606" y="279.0" text-anchor="end" class="axis">70.0</text>
+<line x1="614" y1="181.5" x2="1068" y2="181.5" stroke="#d9e0e6"/>
+<text x="606" y="185.5" text-anchor="end" class="axis">105.0</text>
+<line x1="614" y1="88.0" x2="1068" y2="88.0" stroke="#d9e0e6"/>
+<text x="606" y="92.0" text-anchor="end" class="axis">140.0</text>
+<rect x="639.0" y="417.8" width="63.6" height="44.2" rx="2" fill="#d55e4f"/>
+<text x="670.8" y="410.8" text-anchor="middle" class="value">16.6</text>
+<text x="670.8" y="482.0" text-anchor="middle" class="label">im1</text>
+<rect x="752.5" y="395.2" width="63.6" height="66.8" rx="2" fill="#d55e4f"/>
+<text x="784.2" y="388.2" text-anchor="middle" class="value">25.0</text>
+<text x="784.2" y="482.0" text-anchor="middle" class="label">im2</text>
+<rect x="866.0" y="364.9" width="63.6" height="97.1" rx="2" fill="#d55e4f"/>
+<text x="897.8" y="357.9" text-anchor="middle" class="value">36.4</text>
+<text x="897.8" y="482.0" text-anchor="middle" class="label">im3</text>
+<rect x="979.5" y="107.2" width="63.6" height="354.8" rx="2" fill="#d55e4f"/>
+<text x="1011.2" y="100.2" text-anchor="middle" class="value">132.8</text>
+<text x="1011.2" y="482.0" text-anchor="middle" class="label">im4</text>
+<text x="570" y="275.0" transform="rotate(-90 570 275.0)" text-anchor="middle" class="axis">Blur MiB</text>
+</svg>

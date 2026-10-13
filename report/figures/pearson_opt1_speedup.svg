@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing: 0; }
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #586675; }
+.axis { font-size: 12px; fill: #586675; }
+.label { font-size: 13px; }
+.value { font-size: 12px; font-weight: 700; }
+</style>
+<rect width="1000" height="500" fill="#ffffff"/>
+<text x="32" y="34" class="title">Pearson Optimization 1 speedup over -O2 baseline</text>
+<text x="32" y="56" class="subtitle">Speedup calculated from median elapsed time</text>
+<line x1="89" y1="418.0" x2="930" y2="418.0" stroke="#d9e0e6"/>
+<text x="81" y="422.0" text-anchor="end" class="axis">0.0</text>
+<line x1="89" y1="352.4" x2="930" y2="352.4" stroke="#d9e0e6"/>
+<text x="81" y="356.4" text-anchor="end" class="axis">1.0</text>
+<line x1="89" y1="286.8" x2="930" y2="286.8" stroke="#d9e0e6"/>
+<text x="81" y="290.8" text-anchor="end" class="axis">2.0</text>
+<line x1="89" y1="221.2" x2="930" y2="221.2" stroke="#d9e0e6"/>
+<text x="81" y="225.2" text-anchor="end" class="axis">3.0</text>
+<line x1="89" y1="155.6" x2="930" y2="155.6" stroke="#d9e0e6"/>
+<text x="81" y="159.6" text-anchor="end" class="axis">4.0</text>
+<line x1="89" y1="90.0" x2="930" y2="90.0" stroke="#d9e0e6"/>
+<text x="81" y="94.0" text-anchor="end" class="axis">5.0</text>
+<polyline points="89.0,318.7 369.3,277.8 649.7,207.8 930.0,127.0" fill="none" stroke="#d55e4f" stroke-width="4"/>
+<circle cx="89.0" cy="318.7" r="6" fill="#d55e4f"/>
+<text x="89.0" y="306.7" text-anchor="middle" class="value">1.51x</text>
+<text x="89.0" y="439" text-anchor="middle" class="label">128</text>
+<circle cx="369.3" cy="277.8" r="6" fill="#d55e4f"/>
+<text x="369.3" y="265.8" text-anchor="middle" class="value">2.14x</text>
+<text x="369.3" y="439" text-anchor="middle" class="label">256</text>
+<circle cx="649.7" cy="207.8" r="6" fill="#d55e4f"/>
+<text x="649.7" y="195.8" text-anchor="middle" class="value">3.20x</text>
+<text x="649.7" y="439" text-anchor="middle" class="label">512</text>
+<circle cx="930.0" cy="127.0" r="6" fill="#d55e4f"/>
+<text x="930.0" y="115.0" text-anchor="middle" class="value">4.44x</text>
+<text x="930.0" y="439" text-anchor="middle" class="label">1024</text>
+<text x="46" y="254.0" transform="rotate(-90 46 254.0)" text-anchor="middle" class="axis">Speedup</text>
+</svg>

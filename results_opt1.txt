@@ -1,0 +1,9 @@
+binary = /home/vboxuser/dv1674_a2/versions/optimizations_1/blur/blur
+radius = 15    runs = 5    (median shown)
+----------------------------------------------------------------------------
+image         wall(s)    user(s)     sys(s)   maxRSS(MB)
+----------------------------------------------------------------------------
+im1.ppm          0.93       0.81       0.06           11
+im2.ppm          1.71       1.57       0.13           19
+im3.ppm          3.10       2.96       0.13           31
+im4.ppm         15.79      15.16       0.60          132

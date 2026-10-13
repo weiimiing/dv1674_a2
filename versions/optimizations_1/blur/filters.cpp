@@ -22,64 +22,75 @@ namespace Filter
         }
     }
 
-    Matrix blur(Matrix m, const int radius)
+        Matrix blur(Matrix m, const int radius)
     {
-        Matrix scratch{PPM::max_dimension};
-        auto dst{m};
+        const auto width  { m.get_x_size() };
+        const auto height { m.get_y_size() };
 
-        for (auto x{0}; x < dst.get_x_size(); x++)
+        Matrix scratch{ width, height, m.get_color_max() };  // only as big as the image
+        Matrix dst{ width, height, m.get_color_max() };  // empty, not a copy of m
+
+        // The Gaussian weights only depend on radius, compute once befor loops
+        double w[Gauss::max_radius]{};
+        Gauss::get_weights(radius, w);
+
+        //Pass 1: horizontal blur
+        for (auto x{0}; x < width; x++)
         {
-            for (auto y{0}; y < dst.get_y_size(); y++)
+            for (auto y{0}; y < height; y++)
             {
-                double w[Gauss::max_radius]{};
-                Gauss::get_weights(radius, w);
-
-                // unsigned char Matrix::r(unsigned x, unsigned y) const
-                // {
-                //     return R[y * x_size + x];
-                // }
-
-                auto r{w[0] * dst.r(x, y)}, g{w[0] * dst.g(x, y)}, b{w[0] * dst.b(x, y)}, n{w[0]};
+                auto r{ w[0] * m.r(x, y) };
+                auto g{ w[0] * m.g(x, y) };
+                auto b{ w[0] * m.b(x, y) };
+                auto n{ w[0] };
 
                 for (auto wi{1}; wi <= radius; wi++)
                 {
-                    auto wc{w[wi]};
-                    auto x2{x - wi};
+                    auto wc{ w[wi] };
+
+                    // Left neighbour
+                    auto x2{ x - wi };
                     if (x2 >= 0)
                     {
-                        r += wc * dst.r(x2, y);
-                        g += wc * dst.g(x2, y);
-                        b += wc * dst.b(x2, y);
+                        r += wc * m.r(x2, y);
+                        g += wc * m.g(x2, y);
+                        b += wc * m.b(x2, y);
                         n += wc;
                     }
+
+                    // Right neighbour
                     x2 = x + wi;
-                    if (x2 < dst.get_x_size())
+                    if (x2 < width)
                     {
-                        r += wc * dst.r(x2, y);
-                        g += wc * dst.g(x2, y);
-                        b += wc * dst.b(x2, y);
+                        r += wc * m.r(x2, y);
+                        g += wc * m.g(x2, y);
+                        b += wc * m.b(x2, y);
                         n += wc;
                     }
                 }
+
                 scratch.r(x, y) = r / n;
                 scratch.g(x, y) = g / n;
                 scratch.b(x, y) = b / n;
             }
         }
 
-        for (auto x{0}; x < dst.get_x_size(); x++)
+        // Pass 2: vertical blur
+        for (auto x{0}; x < width; x++)
         {
-            for (auto y{0}; y < dst.get_y_size(); y++)
+            for (auto y{0}; y < height; y++)
             {
-                double w[Gauss::max_radius]{};
-                Gauss::get_weights(radius, w);
-
-                auto r{w[0] * scratch.r(x, y)}, g{w[0] * scratch.g(x, y)}, b{w[0] * scratch.b(x, y)}, n{w[0]};
+                auto r{ w[0] * scratch.r(x, y) };
+                auto g{ w[0] * scratch.g(x, y) };
+                auto b{ w[0] * scratch.b(x, y) };
+                auto n{ w[0] };
 
                 for (auto wi{1}; wi <= radius; wi++)
                 {
-                    auto wc{w[wi]};
-                    auto y2{y - wi};
+                    auto wc{ w[wi] };
+
+                    // Top neighbour
+                    auto y2{ y - wi };
                     if (y2 >= 0)
                     {
                         r += wc * scratch.r(x, y2);
@@ -87,8 +98,10 @@ namespace Filter
                         b += wc * scratch.b(x, y2);
                         n += wc;
                     }
+
+                    // Bottom neighbour
                     y2 = y + wi;
-                    if (y2 < dst.get_y_size())
+                    if (y2 < height)
                     {
                         r += wc * scratch.r(x, y2);
                         g += wc * scratch.g(x, y2);
@@ -96,6 +109,7 @@ namespace Filter
                         n += wc;
                     }
                 }
+
                 dst.r(x, y) = r / n;
                 dst.g(x, y) = g / n;
                 dst.b(x, y) = b / n;

@@ -13,12 +13,39 @@ namespace Analysis {
 
 std::vector<double> correlation_coefficients(std::vector<Vector> datasets)
 {
+
+    const std::size_t count = datasets.size();
+
+    // Centre and normalize each vector once before processing pairs.
+    // This hoists repeated mean and magnitude calculations out of the
+    // nested loops. The input is passed by value, so it can be modified.
+    for (auto& dataset : datasets) {
+        dataset.normalize();
+    }
+
     std::vector<double> result {};
 
-    for (auto sample1 { 0 }; sample1 < datasets.size() - 1; sample1++) {
-        for (auto sample2 { sample1 + 1 }; sample2 < datasets.size(); sample2++) {
-            auto corr { pearson(datasets[sample1], datasets[sample2]) };
-            result.push_back(corr);
+    // There are n * (n - 1) / 2 unique pairs. Reserving this capacity
+    // prevents repeated reallocations while results are appended.
+    result.reserve(datasets.size() * (datasets.size() - 1) / 2);
+
+    // Calculate each unique pair once, excluding self-correlations and
+    // avoiding duplicate pairs such as both (a, b) and (b, a).
+    for (std::size_t sample1 = 0;
+         sample1 + 1 < count;
+         ++sample1) {
+        for (std::size_t sample2 = sample1 + 1;
+             sample2 < count;
+             ++sample2) {
+            // Since both vectors are already normalized, their Pearson
+            // correlation coefficient is their dot product.
+            const double correlation =
+                datasets[sample1].dot(datasets[sample2]);
+
+            // Correct small floating-point rounding errors that could
+            // otherwise produce a value slightly outside [-1, 1].
+            result.push_back(
+                std::clamp(correlation, -1.0, 1.0));
         }
     }
 

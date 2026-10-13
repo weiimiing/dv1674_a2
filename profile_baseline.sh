@@ -44,7 +44,6 @@ correctness_raw="$results_dir/correctness.csv"
 summary_file="$results_dir/summary.csv"
 profile_metrics="$results_dir/callgrind_metrics.csv"
 correctness_log="$results_dir/correctness_details.txt"
-restore_needed=0
 calibrated_iterations=1
 
 restore_normal_builds()
@@ -59,17 +58,23 @@ restore_normal_builds()
 cleanup()
 {
     local status=$?
+    local clean_status=0
     trap - EXIT
+
+    set +e
     rm -rf -- "$temp_dir"
 
-    if ((restore_needed)); then
-        set +e
-        restore_normal_builds
-        local restore_status=$?
-        set -e
-        if ((status == 0 && restore_status != 0)); then
-            status=$restore_status
-        fi
+    echo "Cleaning build products for stage '$stage_name'..."
+    if [[ -d "$pearson_dir" ]]; then
+        make -C "$pearson_dir" clean || clean_status=$?
+    fi
+    if [[ -d "$blur_dir" ]]; then
+        make -C "$blur_dir" clean || clean_status=$?
+    fi
+    set -e
+
+    if ((status == 0 && clean_status != 0)); then
+        status=$clean_status
     fi
 
     exit "$status"
@@ -352,7 +357,6 @@ if [[ "$run_gprof" == "1" ]]; then
 
     echo
     echo "Building gprof-instrumented executables..."
-    restore_needed=1
     make -C "$pearson_dir" clean
     make -C "$pearson_dir" CXXFLAGS="$pearson_original_flags -g -pg"
     make -C "$blur_dir" clean
@@ -375,7 +379,6 @@ if [[ "$run_gprof" == "1" ]]; then
     )
 
     restore_normal_builds
-    restore_needed=0
 fi
 
 printf "stage,program,input,instruction_refs,instruction_l1_misses,instruction_ll_misses,data_refs,data_l1_misses,data_ll_misses,data_l1_miss_percent,data_ll_miss_percent,branches,branch_mispredicts,branch_mispredict_percent\n" > "$profile_metrics"
@@ -429,7 +432,8 @@ if [[ "$run_callgrind" == "1" ]]; then
 
     callgrind_annotate --auto=yes --threshold=95 \
         "$results_dir/pearson_callgrind.out" \
-        > "$results_dir/pearson_callgrind.txt"
+        > "$results_dir/pearson_callgrind.txt" \
+        2> "$results_dir/pearson_callgrind_annotate_log.txt"
     append_callgrind_metrics \
         "pearson" "${pearson_callgrind_size}.data" \
         "$results_dir/pearson_callgrind.out"
@@ -443,7 +447,8 @@ if [[ "$run_callgrind" == "1" ]]; then
 
     callgrind_annotate --auto=yes --threshold=95 \
         "$results_dir/blur_callgrind.out" \
-        > "$results_dir/blur_callgrind.txt"
+        > "$results_dir/blur_callgrind.txt" \
+        2> "$results_dir/blur_callgrind_annotate_log.txt"
     append_callgrind_metrics \
         "blur" "${blur_callgrind_image}.ppm" \
         "$results_dir/blur_callgrind.out"
@@ -462,4 +467,5 @@ echo "Reports written to: $results_dir"
 echo "  Main metrics: $summary_file"
 echo "  gprof reports: *_gprof.txt"
 echo "  Callgrind reports: *_callgrind.txt"
+echo "  Callgrind annotation logs: *_callgrind_annotate_log.txt"
 echo "  Cache/branch totals: $profile_metrics"
