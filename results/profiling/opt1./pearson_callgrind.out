@@ -1,8 +1,8 @@
 # callgrind format
 version: 1
 creator: callgrind-3.26.0
-pid: 17364
-cmd:  /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/pearson /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/data/512.data /tmp/a2-stage-profile.H1zAi6/pearson_callgrind_output.data
+pid: 22039
+cmd:  /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/pearson /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/data/512.data /tmp/a2-stage-profile.HYQzGu/pearson_callgrind_output.data
 part: 1
 
 

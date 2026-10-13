@@ -6,7 +6,7 @@ D1 cache: 49152 B, 64 B, 12-way associative
 LL cache: 134217728 B, 64 B, 2-way associative
 Timerange: Basic block 0 - 256747586
 Trigger: Program termination
-Profiled target:  /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/pearson /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/data/512.data /tmp/a2-stage-profile.H1zAi6/pearson_callgrind_output.data (PID 17364, part 1)
+Profiled target:  /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/pearson /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/pearson/data/512.data /tmp/a2-stage-profile.HYQzGu/pearson_callgrind_output.data (PID 22039, part 1)
 Events recorded:  Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
 Events shown:     Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
 Event sort order: Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim

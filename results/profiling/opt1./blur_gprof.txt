@@ -3,60 +3,60 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 77.78      0.14     0.14        1   140.00   156.67  Filter::blur(Matrix, int)
- 11.11      0.16     0.02        3     6.67     6.67  Matrix::Matrix(Matrix const&)
-  5.56      0.17     0.01 153006002     0.00     0.00  Matrix::get_y_size() const
-  5.56      0.18     0.01                             _init
-  0.00      0.18     0.00 574560781     0.00     0.00  Matrix::b(unsigned int, unsigned int)
-  0.00      0.18     0.00 574560000     0.00     0.00  Matrix::g(unsigned int, unsigned int)
-  0.00      0.18     0.00 574560000     0.00     0.00  Matrix::r(unsigned int, unsigned int)
-  0.00      0.18     0.00 135006004     0.00     0.00  Matrix::get_x_size() const
-  0.00      0.18     0.00      384     0.00     0.00  std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const
-  0.00      0.18     0.00       35     0.00     0.00  PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-  0.00      0.18     0.00       17     0.00     0.00  std::__detail::_Scanner<char>::_M_scan_normal()
-  0.00      0.18     0.00       16     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion()
-  0.00      0.18     0.00       13     0.00     0.00  std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
-  0.00      0.18     0.00       12     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&)
-  0.00      0.18     0.00       12     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char()
-  0.00      0.18     0.00       12     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom()
-  0.00      0.18     0.00       11     0.00     0.00  void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&)
-  0.00      0.18     0.00       11     0.00     0.00  std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
-  0.00      0.18     0.00       10     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier()
-  0.00      0.18     0.00        5     0.00     0.00  Matrix::~Matrix()
-  0.00      0.18     0.00        5     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin()
-  0.00      0.18     0.00        5     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative()
-  0.00      0.18     0.00        5     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction()
-  0.00      0.18     0.00        5     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression()
-  0.00      0.18     0.00        4     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>)
-  0.00      0.18     0.00        3     0.00     0.00  unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
-  0.00      0.18     0.00        3     0.00     0.00  std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const
-  0.00      0.18     0.00        3     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
-  0.00      0.18     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
-  0.00      0.18     0.00        3     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool)
-  0.00      0.18     0.00        3     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end()
-  0.00      0.18     0.00        3     0.00     0.00  std::__detail::_Scanner<char>::_M_eat_escape_ecma()
-  0.00      0.18     0.00        3     0.00     0.00  void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>()
-  0.00      0.18     0.00        3     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop()
-  0.00      0.18     0.00        2     0.00     0.00  std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()
-  0.00      0.18     0.00        2     0.00     0.00  std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()
-  0.00      0.18     0.00        2     0.00     0.00  std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
-  0.00      0.18     0.00        2     0.00     0.00  std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale)
-  0.00      0.18     0.00        2     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type)
-  0.00      0.18     0.00        1     0.00     0.00  PPM::Reader::get_color_max()
-  0.00      0.18     0.00        1     0.00     0.00  PPM::Reader::get_dimensions()
-  0.00      0.18     0.00        1     0.00     0.00  PPM::Reader::get_magic_number[abi:cxx11]()
-  0.00      0.18     0.00        1     0.00     0.00  PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-  0.00      0.18     0.00        1     0.00     0.00  PPM::Reader::get_data(unsigned int, unsigned int)
-  0.00      0.18     0.00        1     0.00     0.00  PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-  0.00      0.18     0.00        1     0.00     0.00  Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int)
-  0.00      0.18     0.00        1     0.00     0.00  Matrix::Matrix(unsigned int)
-  0.00      0.18     0.00        1     0.00     0.00  Matrix::get_color_max() const
-  0.00      0.18     0.00        1     0.00     0.00  Matrix::get_B() const
-  0.00      0.18     0.00        1     0.00     0.00  Matrix::get_G() const
-  0.00      0.18     0.00        1     0.00     0.00  Matrix::get_R() const
-  0.00      0.18     0.00        1     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
-  0.00      0.18     0.00        1     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&)
-  0.00      0.18     0.00        1     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long)
+ 73.33      0.11     0.11        1   110.00   110.00  Filter::blur(Matrix, int)
+ 20.00      0.14     0.03                             _init
+  6.67      0.15     0.01        2     5.00     5.00  Matrix::Matrix(Matrix const&)
+  0.00      0.15     0.00 574560781     0.00     0.00  Matrix::b(unsigned int, unsigned int)
+  0.00      0.15     0.00 574560000     0.00     0.00  Matrix::g(unsigned int, unsigned int)
+  0.00      0.15     0.00 574560000     0.00     0.00  Matrix::r(unsigned int, unsigned int)
+  0.00      0.15     0.00      384     0.00     0.00  std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const
+  0.00      0.15     0.00       35     0.00     0.00  PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00      0.15     0.00       17     0.00     0.00  std::__detail::_Scanner<char>::_M_scan_normal()
+  0.00      0.15     0.00       16     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion()
+  0.00      0.15     0.00       13     0.00     0.00  std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
+  0.00      0.15     0.00       12     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&)
+  0.00      0.15     0.00       12     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char()
+  0.00      0.15     0.00       12     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom()
+  0.00      0.15     0.00       11     0.00     0.00  void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&)
+  0.00      0.15     0.00       11     0.00     0.00  std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
+  0.00      0.15     0.00       10     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier()
+  0.00      0.15     0.00        5     0.00     0.00  Matrix::~Matrix()
+  0.00      0.15     0.00        5     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin()
+  0.00      0.15     0.00        5     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative()
+  0.00      0.15     0.00        5     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction()
+  0.00      0.15     0.00        5     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression()
+  0.00      0.15     0.00        4     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>)
+  0.00      0.15     0.00        3     0.00     0.00  unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
+  0.00      0.15     0.00        3     0.00     0.00  Matrix::get_x_size() const
+  0.00      0.15     0.00        3     0.00     0.00  Matrix::get_y_size() const
+  0.00      0.15     0.00        3     0.00     0.00  Matrix::get_color_max() const
+  0.00      0.15     0.00        3     0.00     0.00  std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const
+  0.00      0.15     0.00        3     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+  0.00      0.15     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  0.00      0.15     0.00        3     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool)
+  0.00      0.15     0.00        3     0.00     0.00  std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end()
+  0.00      0.15     0.00        3     0.00     0.00  std::__detail::_Scanner<char>::_M_eat_escape_ecma()
+  0.00      0.15     0.00        3     0.00     0.00  void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>()
+  0.00      0.15     0.00        3     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop()
+  0.00      0.15     0.00        2     0.00     0.00  Matrix::Matrix(unsigned int, unsigned int, unsigned int)
+  0.00      0.15     0.00        2     0.00     0.00  std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy()
+  0.00      0.15     0.00        2     0.00     0.00  std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose()
+  0.00      0.15     0.00        2     0.00     0.00  std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+  0.00      0.15     0.00        2     0.00     0.00  std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale)
+  0.00      0.15     0.00        2     0.00     0.00  std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type)
+  0.00      0.15     0.00        1     0.00     0.00  PPM::Reader::get_color_max()
+  0.00      0.15     0.00        1     0.00     0.00  PPM::Reader::get_dimensions()
+  0.00      0.15     0.00        1     0.00     0.00  PPM::Reader::get_magic_number[abi:cxx11]()
+  0.00      0.15     0.00        1     0.00     0.00  PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00      0.15     0.00        1     0.00     0.00  PPM::Reader::get_data(unsigned int, unsigned int)
+  0.00      0.15     0.00        1     0.00     0.00  PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00      0.15     0.00        1     0.00     0.00  Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int)
+  0.00      0.15     0.00        1     0.00     0.00  Matrix::get_B() const
+  0.00      0.15     0.00        1     0.00     0.00  Matrix::get_G() const
+  0.00      0.15     0.00        1     0.00     0.00  Matrix::get_R() const
+  0.00      0.15     0.00        1     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation)
+  0.00      0.15     0.00        1     0.00     0.00  std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&)
+  0.00      0.15     0.00        1     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long)
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -94,300 +94,300 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 4 byte(s) for 5.56% of 0.18 seconds
+granularity: each sample hit covers 4 byte(s) for 6.67% of 0.15 seconds
 
 index % time    self  children    called     name
                                                  <spontaneous>
-[1]     94.4    0.00    0.17                 main [1]
-                0.14    0.02       1/1           Filter::blur(Matrix, int) [2]
-                0.01    0.00       2/3           Matrix::Matrix(Matrix const&) [3]
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-                0.00    0.00       1/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       4/5           Matrix::~Matrix() [35]
-                0.00    0.00       3/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [43]
+[1]     80.0    0.00    0.12                 main [1]
+                0.11    0.00       1/1           Filter::blur(Matrix, int) [2]
+                0.01    0.00       2/2           Matrix::Matrix(Matrix const&) [4]
+                0.00    0.00       4/5           Matrix::~Matrix() [27]
+                0.00    0.00       3/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [39]
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+                0.00    0.00       1/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
 -----------------------------------------------
-                0.14    0.02       1/1           main [1]
-[2]     87.0    0.14    0.02       1         Filter::blur(Matrix, int) [2]
-                0.01    0.00 153006000/153006002     Matrix::get_y_size() const [4]
-                0.01    0.00       1/3           Matrix::Matrix(Matrix const&) [3]
-                0.00    0.00 574560000/574560000     Matrix::r(unsigned int, unsigned int) [26]
-                0.00    0.00 574560000/574560000     Matrix::g(unsigned int, unsigned int) [25]
-                0.00    0.00 574560000/574560781     Matrix::b(unsigned int, unsigned int) [24]
-                0.00    0.00 135006002/135006004     Matrix::get_x_size() const [27]
-                0.00    0.00       1/1           Matrix::Matrix(unsigned int) [56]
-                0.00    0.00       1/5           Matrix::~Matrix() [35]
------------------------------------------------
-                0.01    0.00       1/3           Filter::blur(Matrix, int) [2]
-                0.01    0.00       2/3           main [1]
-[3]     11.1    0.02    0.00       3         Matrix::Matrix(Matrix const&) [3]
------------------------------------------------
-                0.00    0.00       2/153006002     PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.01    0.00 153006000/153006002     Filter::blur(Matrix, int) [2]
-[4]      5.6    0.01    0.00 153006002         Matrix::get_y_size() const [4]
+                0.11    0.00       1/1           main [1]
+[2]     73.3    0.11    0.00       1         Filter::blur(Matrix, int) [2]
+                0.00    0.00 574560000/574560000     Matrix::r(unsigned int, unsigned int) [15]
+                0.00    0.00 574560000/574560000     Matrix::g(unsigned int, unsigned int) [14]
+                0.00    0.00 574560000/574560781     Matrix::b(unsigned int, unsigned int) [13]
+                0.00    0.00       2/3           Matrix::get_color_max() const [36]
+                0.00    0.00       2/2           Matrix::Matrix(unsigned int, unsigned int, unsigned int) [45]
+                0.00    0.00       1/3           Matrix::get_x_size() const [34]
+                0.00    0.00       1/3           Matrix::get_y_size() const [35]
+                0.00    0.00       1/5           Matrix::~Matrix() [27]
 -----------------------------------------------
                                                  <spontaneous>
-[5]      5.6    0.01    0.00                 _init [5]
+[3]     20.0    0.03    0.00                 _init [3]
+-----------------------------------------------
+                0.01    0.00       2/2           main [1]
+[4]      6.7    0.01    0.00       2         Matrix::Matrix(Matrix const&) [4]
+-----------------------------------------------
+[5]      0.0    0.00    0.00       2+22      <cycle 1 as a whole> [5]
+                0.00    0.00      13+22          std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+                0.00    0.00      11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [25]
+-----------------------------------------------
+[6]      0.0    0.00    0.00       2+20      <cycle 2 as a whole> [6]
+                0.00    0.00       5+11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+                0.00    0.00      12             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+                0.00    0.00       5             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [30]
+-----------------------------------------------
+                0.00    0.00       1/574560781     PPM::Reader::get_color_max() [51]
+                0.00    0.00       2/574560781     PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       2/574560781     PPM::Reader::get_dimensions() [52]
+                0.00    0.00       2/574560781     std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+                0.00    0.00       6/574560781     void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [43]
+                0.00    0.00     768/574560781     std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const [16]
+                0.00    0.00 574560000/574560781     Filter::blur(Matrix, int) [2]
+[13]     0.0    0.00    0.00 574560781         Matrix::b(unsigned int, unsigned int) [13]
+-----------------------------------------------
+                0.00    0.00 574560000/574560000     Filter::blur(Matrix, int) [2]
+[14]     0.0    0.00    0.00 574560000         Matrix::g(unsigned int, unsigned int) [14]
+-----------------------------------------------
+                0.00    0.00 574560000/574560000     Filter::blur(Matrix, int) [2]
+[15]     0.0    0.00    0.00 574560000         Matrix::r(unsigned int, unsigned int) [15]
+-----------------------------------------------
+                0.00    0.00     384/384         void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [43]
+[16]     0.0    0.00    0.00     384         std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const [16]
+                0.00    0.00     768/574560781     Matrix::b(unsigned int, unsigned int) [13]
 -----------------------------------------------
                 0.00    0.00       1/35          main [1]
-                0.00    0.00       1/35          PPM::Reader::get_dimensions() [11]
-                0.00    0.00       1/35          PPM::Reader::get_color_max() [10]
-                0.00    0.00       2/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-                0.00    0.00       3/35          void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [16]
-                0.00    0.00       3/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [15]
-                0.00    0.00       5/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-                0.00    0.00       8/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [14]
-                0.00    0.00      11/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-[6]      0.0    0.00    0.00      35         PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       2/153006002     Matrix::get_y_size() const [4]
-                0.00    0.00      15/17          std::__detail::_Scanner<char>::_M_scan_normal() [29]
-                0.00    0.00       3/3           std::__detail::_Scanner<char>::_M_eat_escape_ecma() [46]
-                0.00    0.00       2/135006004     Matrix::get_x_size() const [27]
-                0.00    0.00       2/2           std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [50]
-                0.00    0.00       2/574560781     Matrix::b(unsigned int, unsigned int) [24]
-                0.00    0.00       2/2           std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
-                0.00    0.00       1/1           Matrix::get_color_max() const [57]
+                0.00    0.00       1/35          PPM::Reader::get_dimensions() [52]
+                0.00    0.00       1/35          PPM::Reader::get_color_max() [51]
+                0.00    0.00       2/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+                0.00    0.00       3/35          void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [43]
+                0.00    0.00       3/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [26]
+                0.00    0.00       5/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+                0.00    0.00       8/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [19]
+                0.00    0.00      11/35          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+[17]     0.0    0.00    0.00      35         PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00      15/17          std::__detail::_Scanner<char>::_M_scan_normal() [18]
+                0.00    0.00       3/3           std::__detail::_Scanner<char>::_M_eat_escape_ecma() [42]
+                0.00    0.00       2/3           Matrix::get_x_size() const [34]
+                0.00    0.00       2/3           Matrix::get_y_size() const [35]
+                0.00    0.00       2/2           std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [48]
+                0.00    0.00       2/574560781     Matrix::b(unsigned int, unsigned int) [13]
+                0.00    0.00       2/2           std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+                0.00    0.00       1/3           Matrix::get_color_max() const [36]
                 0.00    0.00       1/1           Matrix::get_G() const [59]
                 0.00    0.00       1/1           Matrix::get_R() const [60]
                 0.00    0.00       1/1           Matrix::get_B() const [58]
 -----------------------------------------------
-                0.00    0.00       1/1           main [1]
-[7]      0.0    0.00    0.00       1         PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-                0.00    0.00       1/1           PPM::Reader::get_dimensions() [11]
-                0.00    0.00       1/1           PPM::Reader::get_color_max() [10]
-                0.00    0.00       1/1           PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [53]
-                0.00    0.00       1/1           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long) [63]
-                0.00    0.00       1/1           PPM::Reader::get_magic_number[abi:cxx11]() [52]
-                0.00    0.00       1/1           PPM::Reader::get_data(unsigned int, unsigned int) [54]
-                0.00    0.00       1/1           Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int) [55]
+                0.00    0.00       2/17          std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale) [49]
+                0.00    0.00      15/17          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+[18]     0.0    0.00    0.00      17         std::__detail::_Scanner<char>::_M_scan_normal() [18]
 -----------------------------------------------
-                0.00    0.00       1/2           PPM::Reader::get_dimensions() [11]
-                0.00    0.00       1/2           PPM::Reader::get_color_max() [10]
-[8]      0.0    0.00    0.00       2         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-                0.00    0.00       2/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [37]
-                0.00    0.00       2/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       2/2           std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale) [51]
-                0.00    0.00       2/5           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [36]
-                0.00    0.00       1/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [33]
+                0.00    0.00      16/16          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+[19]     0.0    0.00    0.00      16         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [19]
+                0.00    0.00       8/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       2/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [24]
 -----------------------------------------------
-[9]      0.0    0.00    0.00       2+20      <cycle 2 as a whole> [9]
-                0.00    0.00       5+11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-                0.00    0.00      12             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-                0.00    0.00       5             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [37]
------------------------------------------------
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-[10]     0.0    0.00    0.00       1         PPM::Reader::get_color_max() [10]
-                0.00    0.00       1/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-                0.00    0.00       1/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       1/3           unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [40]
-                0.00    0.00       1/574560781     Matrix::b(unsigned int, unsigned int) [24]
-                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [48]
-                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [49]
------------------------------------------------
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-[11]     0.0    0.00    0.00       1         PPM::Reader::get_dimensions() [11]
-                0.00    0.00       1/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-                0.00    0.00       1/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       2/3           unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [40]
-                0.00    0.00       2/574560781     Matrix::b(unsigned int, unsigned int) [24]
-                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [48]
-                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [49]
------------------------------------------------
-                                  11             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-                                   5             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [37]
-[12]     0.0    0.00    0.00       5+11      std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-                0.00    0.00      16/16          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [14]
-                0.00    0.00       5/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00      10/10          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [15]
-                0.00    0.00       5/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression() [38]
-                0.00    0.00       1/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [33]
-                                  12             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-                                  11             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
------------------------------------------------
-                                  12             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-[13]     0.0    0.00    0.00      12         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-                0.00    0.00      11/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       3/3           void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [16]
-                0.00    0.00      12/12          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char() [32]
-                0.00    0.00       3/5           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [36]
-                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop() [47]
-                0.00    0.00       3/3           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end() [45]
-                0.00    0.00       1/4           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [39]
-                                   3             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [37]
------------------------------------------------
-                0.00    0.00      16/16          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-[14]     0.0    0.00    0.00      16         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [14]
-                0.00    0.00       8/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       2/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [33]
------------------------------------------------
-                0.00    0.00      10/10          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-[15]     0.0    0.00    0.00      10         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [15]
-                0.00    0.00       3/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       3/3           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [44]
------------------------------------------------
-                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-[16]     0.0    0.00    0.00       3         void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [16]
-                0.00    0.00       3/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00     384/384         std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const [28]
-                0.00    0.00       6/574560781     Matrix::b(unsigned int, unsigned int) [24]
-                0.00    0.00       3/3           std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const [41]
-                0.00    0.00       3/4           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [39]
------------------------------------------------
-[17]     0.0    0.00    0.00       2+22      <cycle 1 as a whole> [17]
-                0.00    0.00      13+22          std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
-                0.00    0.00      11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [34]
------------------------------------------------
-                0.00    0.00       1/574560781     PPM::Reader::get_color_max() [10]
-                0.00    0.00       2/574560781     PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00       2/574560781     PPM::Reader::get_dimensions() [11]
-                0.00    0.00       2/574560781     std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
-                0.00    0.00       6/574560781     void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [16]
-                0.00    0.00     768/574560781     std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const [28]
-                0.00    0.00 574560000/574560781     Filter::blur(Matrix, int) [2]
-[24]     0.0    0.00    0.00 574560781         Matrix::b(unsigned int, unsigned int) [24]
------------------------------------------------
-                0.00    0.00 574560000/574560000     Filter::blur(Matrix, int) [2]
-[25]     0.0    0.00    0.00 574560000         Matrix::g(unsigned int, unsigned int) [25]
------------------------------------------------
-                0.00    0.00 574560000/574560000     Filter::blur(Matrix, int) [2]
-[26]     0.0    0.00    0.00 574560000         Matrix::r(unsigned int, unsigned int) [26]
------------------------------------------------
-                0.00    0.00       2/135006004     PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-                0.00    0.00 135006002/135006004     Filter::blur(Matrix, int) [2]
-[27]     0.0    0.00    0.00 135006004         Matrix::get_x_size() const [27]
------------------------------------------------
-                0.00    0.00     384/384         void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [16]
-[28]     0.0    0.00    0.00     384         std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const [28]
-                0.00    0.00     768/574560781     Matrix::b(unsigned int, unsigned int) [24]
------------------------------------------------
-                0.00    0.00       2/17          std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale) [51]
-                0.00    0.00      15/17          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-[29]     0.0    0.00    0.00      17         std::__detail::_Scanner<char>::_M_scan_normal() [29]
------------------------------------------------
-                                  22             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
-                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [34]
-                0.00    0.00       2/2           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-[30]     0.0    0.00    0.00      13+22      std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
-                0.00    0.00      12/12          std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [31]
-                0.00    0.00       2/574560781     Matrix::b(unsigned int, unsigned int) [24]
+                                  22             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [25]
+                0.00    0.00       2/2           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+[20]     0.0    0.00    0.00      13+22      std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+                0.00    0.00      12/12          std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [21]
+                0.00    0.00       2/574560781     Matrix::b(unsigned int, unsigned int) [13]
                 0.00    0.00       1/1           std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [62]
-                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [34]
-                                  22             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
+                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [25]
+                                  22             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
 -----------------------------------------------
-                0.00    0.00      12/12          std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
-[31]     0.0    0.00    0.00      12         std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [31]
+                0.00    0.00      12/12          std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+[21]     0.0    0.00    0.00      12         std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [21]
 -----------------------------------------------
-                0.00    0.00      12/12          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-[32]     0.0    0.00    0.00      12         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char() [32]
+                0.00    0.00      12/12          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+[22]     0.0    0.00    0.00      12         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char() [22]
 -----------------------------------------------
-                0.00    0.00       1/11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-                0.00    0.00       1/11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-                0.00    0.00       2/11          std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [44]
-                0.00    0.00       2/11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [14]
-                0.00    0.00       5/11          std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [36]
-[33]     0.0    0.00    0.00      11         void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [33]
+                                  12             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+[23]     0.0    0.00    0.00      12         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+                0.00    0.00      12/12          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char() [22]
+                0.00    0.00      11/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       3/3           void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [43]
+                0.00    0.00       3/5           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [28]
+                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop() [44]
+                0.00    0.00       3/3           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end() [41]
+                0.00    0.00       1/4           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [32]
+                                   3             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [30]
 -----------------------------------------------
-                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
-[34]     0.0    0.00    0.00      11         std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [34]
-                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
+                0.00    0.00       1/11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+                0.00    0.00       1/11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+                0.00    0.00       2/11          std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [40]
+                0.00    0.00       2/11          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [19]
+                0.00    0.00       5/11          std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [28]
+[24]     0.0    0.00    0.00      11         void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [24]
+-----------------------------------------------
+                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+[25]     0.0    0.00    0.00      11         std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [25]
+                                  11             std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
+-----------------------------------------------
+                0.00    0.00      10/10          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+[26]     0.0    0.00    0.00      10         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [26]
+                0.00    0.00       3/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       3/3           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [40]
 -----------------------------------------------
                 0.00    0.00       1/5           Filter::blur(Matrix, int) [2]
                 0.00    0.00       4/5           main [1]
-[35]     0.0    0.00    0.00       5         Matrix::~Matrix() [35]
+[27]     0.0    0.00    0.00       5         Matrix::~Matrix() [27]
 -----------------------------------------------
-                0.00    0.00       2/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-                0.00    0.00       3/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-[36]     0.0    0.00    0.00       5         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [36]
-                0.00    0.00       5/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [33]
+                0.00    0.00       2/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+                0.00    0.00       3/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+[28]     0.0    0.00    0.00       5         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [28]
+                0.00    0.00       5/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [24]
 -----------------------------------------------
-                                   3             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-                0.00    0.00       2/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-[37]     0.0    0.00    0.00       5         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [37]
-                                   5             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
+                                  11             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+                                   5             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [30]
+[29]     0.0    0.00    0.00       5+11      std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+                0.00    0.00      16/16          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion() [19]
+                0.00    0.00      10/10          std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [26]
+                0.00    0.00       5/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression() [31]
+                0.00    0.00       5/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       1/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [24]
+                                  12             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+                                  11             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
 -----------------------------------------------
-                0.00    0.00       5/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [12]
-[38]     0.0    0.00    0.00       5         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression() [38]
+                                   3             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+                0.00    0.00       2/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+[30]     0.0    0.00    0.00       5         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [30]
+                                   5             std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
 -----------------------------------------------
-                0.00    0.00       1/4           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-                0.00    0.00       3/4           void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [16]
-[39]     0.0    0.00    0.00       4         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [39]
+                0.00    0.00       5/5           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative() <cycle 2> [29]
+[31]     0.0    0.00    0.00       5         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression() [31]
 -----------------------------------------------
-                0.00    0.00       1/3           PPM::Reader::get_color_max() [10]
-                0.00    0.00       2/3           PPM::Reader::get_dimensions() [11]
-[40]     0.0    0.00    0.00       3         unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [40]
+                0.00    0.00       1/4           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+                0.00    0.00       3/4           void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [43]
+[32]     0.0    0.00    0.00       4         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [32]
 -----------------------------------------------
-                0.00    0.00       3/3           void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [16]
-[41]     0.0    0.00    0.00       3         std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const [41]
+                0.00    0.00       1/3           PPM::Reader::get_color_max() [51]
+                0.00    0.00       2/3           PPM::Reader::get_dimensions() [52]
+[33]     0.0    0.00    0.00       3         unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [33]
 -----------------------------------------------
-                0.00    0.00       3/3           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [49]
-[42]     0.0    0.00    0.00       3         std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [42]
+                0.00    0.00       1/3           Filter::blur(Matrix, int) [2]
+                0.00    0.00       2/3           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+[34]     0.0    0.00    0.00       3         Matrix::get_x_size() const [34]
+-----------------------------------------------
+                0.00    0.00       1/3           Filter::blur(Matrix, int) [2]
+                0.00    0.00       2/3           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+[35]     0.0    0.00    0.00       3         Matrix::get_y_size() const [35]
+-----------------------------------------------
+                0.00    0.00       1/3           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       2/3           Filter::blur(Matrix, int) [2]
+[36]     0.0    0.00    0.00       3         Matrix::get_color_max() const [36]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [43]
+[37]     0.0    0.00    0.00       3         std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const [37]
+-----------------------------------------------
+                0.00    0.00       3/3           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [47]
+[38]     0.0    0.00    0.00       3         std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [38]
 -----------------------------------------------
                 0.00    0.00       3/3           main [1]
-[43]     0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [43]
+[39]     0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [39]
 -----------------------------------------------
-                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [15]
-[44]     0.0    0.00    0.00       3         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [44]
-                0.00    0.00       2/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [33]
+                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier() [26]
+[40]     0.0    0.00    0.00       3         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [40]
+                0.00    0.00       2/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [24]
 -----------------------------------------------
-                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-[45]     0.0    0.00    0.00       3         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end() [45]
+                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+[41]     0.0    0.00    0.00       3         std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end() [41]
 -----------------------------------------------
-                0.00    0.00       3/3           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-[46]     0.0    0.00    0.00       3         std::__detail::_Scanner<char>::_M_eat_escape_ecma() [46]
+                0.00    0.00       3/3           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+[42]     0.0    0.00    0.00       3         std::__detail::_Scanner<char>::_M_eat_escape_ecma() [42]
 -----------------------------------------------
-                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [13]
-[47]     0.0    0.00    0.00       3         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop() [47]
+                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+[43]     0.0    0.00    0.00       3         void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>() [43]
+                0.00    0.00     384/384         std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const [16]
+                0.00    0.00       6/574560781     Matrix::b(unsigned int, unsigned int) [13]
+                0.00    0.00       3/3           std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const [37]
+                0.00    0.00       3/4           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [32]
+                0.00    0.00       3/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
 -----------------------------------------------
-                0.00    0.00       1/2           PPM::Reader::get_dimensions() [11]
-                0.00    0.00       1/2           PPM::Reader::get_color_max() [10]
-[48]     0.0    0.00    0.00       2         std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [48]
+                0.00    0.00       3/3           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom() <cycle 2> [23]
+[44]     0.0    0.00    0.00       3         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop() [44]
 -----------------------------------------------
-                0.00    0.00       1/2           PPM::Reader::get_dimensions() [11]
-                0.00    0.00       1/2           PPM::Reader::get_color_max() [10]
-[49]     0.0    0.00    0.00       2         std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [49]
-                0.00    0.00       3/3           std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [42]
+                0.00    0.00       2/2           Filter::blur(Matrix, int) [2]
+[45]     0.0    0.00    0.00       2         Matrix::Matrix(unsigned int, unsigned int, unsigned int) [45]
+-----------------------------------------------
+                0.00    0.00       1/2           PPM::Reader::get_dimensions() [52]
+                0.00    0.00       1/2           PPM::Reader::get_color_max() [51]
+[46]     0.0    0.00    0.00       2         std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [46]
+-----------------------------------------------
+                0.00    0.00       1/2           PPM::Reader::get_dimensions() [52]
+                0.00    0.00       1/2           PPM::Reader::get_color_max() [51]
+[47]     0.0    0.00    0.00       2         std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [47]
+                0.00    0.00       3/3           std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [38]
                 0.00    0.00       1/1           std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [61]
 -----------------------------------------------
-                0.00    0.00       2/2           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-[50]     0.0    0.00    0.00       2         std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [50]
+                0.00    0.00       2/2           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+[48]     0.0    0.00    0.00       2         std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [48]
 -----------------------------------------------
-                0.00    0.00       2/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [8]
-[51]     0.0    0.00    0.00       2         std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale) [51]
-                0.00    0.00       2/17          std::__detail::_Scanner<char>::_M_scan_normal() [29]
+                0.00    0.00       2/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+[49]     0.0    0.00    0.00       2         std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale) [49]
+                0.00    0.00       2/17          std::__detail::_Scanner<char>::_M_scan_normal() [18]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-[52]     0.0    0.00    0.00       1         PPM::Reader::get_magic_number[abi:cxx11]() [52]
+                0.00    0.00       1/2           PPM::Reader::get_dimensions() [52]
+                0.00    0.00       1/2           PPM::Reader::get_color_max() [51]
+[50]     0.0    0.00    0.00       2         std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+                0.00    0.00       2/2           std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale) [49]
+                0.00    0.00       2/5           std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [28]
+                0.00    0.00       2/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction() <cycle 2> [30]
+                0.00    0.00       2/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       1/11          void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [24]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-[53]     0.0    0.00    0.00       1         PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [53]
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+[51]     0.0    0.00    0.00       1         PPM::Reader::get_color_max() [51]
+                0.00    0.00       1/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+                0.00    0.00       1/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       1/3           unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [33]
+                0.00    0.00       1/574560781     Matrix::b(unsigned int, unsigned int) [13]
+                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [46]
+                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [47]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-[54]     0.0    0.00    0.00       1         PPM::Reader::get_data(unsigned int, unsigned int) [54]
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+[52]     0.0    0.00    0.00       1         PPM::Reader::get_dimensions() [52]
+                0.00    0.00       2/3           unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [33]
+                0.00    0.00       2/574560781     Matrix::b(unsigned int, unsigned int) [13]
+                0.00    0.00       1/2           std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type) [50]
+                0.00    0.00       1/35          PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
+                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [46]
+                0.00    0.00       1/2           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [47]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
-[55]     0.0    0.00    0.00       1         Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int) [55]
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+[53]     0.0    0.00    0.00       1         PPM::Reader::get_magic_number[abi:cxx11]() [53]
 -----------------------------------------------
-                0.00    0.00       1/1           Filter::blur(Matrix, int) [2]
-[56]     0.0    0.00    0.00       1         Matrix::Matrix(unsigned int) [56]
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+[54]     0.0    0.00    0.00       1         PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [54]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
-[57]     0.0    0.00    0.00       1         Matrix::get_color_max() const [57]
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+[55]     0.0    0.00    0.00       1         PPM::Reader::get_data(unsigned int, unsigned int) [55]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
+                0.00    0.00       1/1           main [1]
+[56]     0.0    0.00    0.00       1         PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+                0.00    0.00       1/1           PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [54]
+                0.00    0.00       1/1           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long) [63]
+                0.00    0.00       1/1           PPM::Reader::get_magic_number[abi:cxx11]() [53]
+                0.00    0.00       1/1           PPM::Reader::get_dimensions() [52]
+                0.00    0.00       1/1           PPM::Reader::get_color_max() [51]
+                0.00    0.00       1/1           PPM::Reader::get_data(unsigned int, unsigned int) [55]
+                0.00    0.00       1/1           Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int) [57]
+-----------------------------------------------
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
+[57]     0.0    0.00    0.00       1         Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int) [57]
+-----------------------------------------------
+                0.00    0.00       1/1           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
 [58]     0.0    0.00    0.00       1         Matrix::get_B() const [58]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
+                0.00    0.00       1/1           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
 [59]     0.0    0.00    0.00       1         Matrix::get_G() const [59]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [6]
+                0.00    0.00       1/1           PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17]
 [60]     0.0    0.00    0.00       1         Matrix::get_R() const [60]
 -----------------------------------------------
-                0.00    0.00       1/1           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [49]
+                0.00    0.00       1/1           std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [47]
 [61]     0.0    0.00    0.00       1         std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [61]
 -----------------------------------------------
-                0.00    0.00       1/1           std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [30]
+                0.00    0.00       1/1           std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long) <cycle 1> [20]
 [62]     0.0    0.00    0.00       1         std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [62]
 -----------------------------------------------
-                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [7]
+                0.00    0.00       1/1           PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [56]
 [63]     0.0    0.00    0.00       1         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long) [63]
 -----------------------------------------------
 
@@ -481,22 +481,22 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [10] PPM::Reader::get_color_max() [58] Matrix::get_B() const [46] std::__detail::_Scanner<char>::_M_eat_escape_ecma()
-  [11] PPM::Reader::get_dimensions() [59] Matrix::get_G() const [51] std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale)
-  [52] PPM::Reader::get_magic_number[abi:cxx11]() [60] Matrix::get_R() const [32] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char()
-  [53] PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [41] std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const [14] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion()
-  [54] PPM::Reader::get_data(unsigned int, unsigned int) [61] std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [15] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier()
-   [7] PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [62] std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [12] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative()
-   [6] PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [42] std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [37] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction()
-   [2] Filter::blur(Matrix, int) [31] std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [38] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression()
-  [24] Matrix::b(unsigned int, unsigned int) [48] std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [16] void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>()
-  [25] Matrix::g(unsigned int, unsigned int) [49] std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [47] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop()
-  [26] Matrix::r(unsigned int, unsigned int) [50] std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [13] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom()
-   [3] Matrix::Matrix(Matrix const&) [33] void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [8] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type)
-  [55] Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int) [63] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long) [34] std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
-  [56] Matrix::Matrix(unsigned int) [43] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [30] std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
-  [35] Matrix::~Matrix()      [44] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [28] std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const
-  [40] unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [39] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [5] _init
-  [27] Matrix::get_x_size() const [45] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end() [17] <cycle 1>
-   [4] Matrix::get_y_size() const [36] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [9] <cycle 2>
-  [57] Matrix::get_color_max() const [29] std::__detail::_Scanner<char>::_M_scan_normal()
+  [51] PPM::Reader::get_color_max() [58] Matrix::get_B() const [42] std::__detail::_Scanner<char>::_M_eat_escape_ecma()
+  [52] PPM::Reader::get_dimensions() [59] Matrix::get_G() const [49] std::__detail::_Scanner<char>::_Scanner(char const*, char const*, std::regex_constants::syntax_option_type, std::locale)
+  [53] PPM::Reader::get_magic_number[abi:cxx11]() [60] Matrix::get_R() const [22] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_try_char()
+  [54] PPM::Reader::fill(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [37] std::__cxx11::regex_traits<char>::_RegexMask std::__cxx11::regex_traits<char>::lookup_classname<char const*>(char const*, char const*, bool) const [19] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_assertion()
+  [55] PPM::Reader::get_data(unsigned int, unsigned int) [61] std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [26] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_quantifier()
+  [56] PPM::Reader::operator()(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [62] std::_Function_handler<bool (char), std::__detail::_CharMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [29] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_alternative()
+  [17] PPM::Writer::operator()(Matrix, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [38] std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_manager(std::_Any_data&, std::_Any_data const&, std::_Manager_operation) [30] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_disjunction()
+   [2] Filter::blur(Matrix, int) [21] std::_Function_handler<bool (char), std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false> >::_M_invoke(std::_Any_data const&, char&&) [31] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_bracket_expression()
+  [13] Matrix::b(unsigned int, unsigned int) [46] std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_destroy() [43] void std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_insert_character_class_matcher<false, false>()
+  [14] Matrix::g(unsigned int, unsigned int) [47] std::_Sp_counted_ptr_inplace<std::__detail::_NFA<std::__cxx11::regex_traits<char> >, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() [44] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_pop()
+  [15] Matrix::r(unsigned int, unsigned int) [48] std::vector<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >::_M_fill_assign(unsigned long, std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [23] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_M_atom()
+   [4] Matrix::Matrix(Matrix const&) [24] void std::vector<std::__detail::_State<char>, std::allocator<std::__detail::_State<char> > >::_M_realloc_append<std::__detail::_State<char> >(std::__detail::_State<char>&&) [50] std::__detail::_Compiler<std::__cxx11::regex_traits<char> >::_Compiler(char const*, char const*, std::locale const&, std::regex_constants::syntax_option_type)
+  [57] Matrix::Matrix(unsigned char*, unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int) [63] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<true>(char const*, unsigned long) [25] std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_rep_once_more(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
+  [45] Matrix::Matrix(unsigned int, unsigned int, unsigned int) [39] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [20] std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_M_dfs(std::__detail::_Executor<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::sub_match<__gnu_cxx::__normal_iterator<char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::regex_traits<char>, true>::_Match_mode, long)
+  [27] Matrix::~Matrix()      [40] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_repeat(long, long, bool) [16] std::__detail::_BracketMatcher<std::__cxx11::regex_traits<char>, false, false>::_M_apply(char) const::{lambda()#1}::operator()() const
+  [33] unsigned long __gnu_cxx::__stoa<unsigned long, unsigned long, char, int>(unsigned long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [32] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_matcher(std::function<bool (char)>) [3] _init
+  [34] Matrix::get_x_size() const [41] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_end() [5] <cycle 1>
+  [35] Matrix::get_y_size() const [28] std::__detail::_NFA<std::__cxx11::regex_traits<char> >::_M_insert_subexpr_begin() [6] <cycle 2>
+  [36] Matrix::get_color_max() const [18] std::__detail::_Scanner<char>::_M_scan_normal()

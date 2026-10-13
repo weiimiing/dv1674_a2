@@ -1,3 +1,3 @@
 stage,program,input,instruction_refs,instruction_l1_misses,instruction_ll_misses,data_refs,data_l1_misses,data_ll_misses,data_l1_miss_percent,data_ll_miss_percent,branches,branch_mispredicts,branch_mispredict_percent
 opt1.,pearson,512.data,1276865003,421712,2712,484825418,8686673,76015,1.7917,0.0157,206657149,6397295,3.0956
-opt1.,blur,im2.ppm,9071872768,3250,2772,5541269143,33277492,287386,0.6005,0.0052,2563105945,6368178,0.2485
+opt1.,blur,im2.ppm,4306304595,3267,2768,2380859125,88845317,268319,3.7316,0.0113,194371161,2170807,1.1168
