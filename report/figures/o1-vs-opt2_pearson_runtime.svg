@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing: 0; }
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #586675; }
+.axis { font-size: 12px; fill: #586675; }
+.label { font-size: 13px; }
+.value { font-size: 12px; font-weight: 700; }
+</style>
+<rect width="1000" height="560" fill="#ffffff"/>
+<text x="32" y="34" class="title">Pearson runtime: Optimization 1 vs Optimization 2</text>
+<text x="32" y="56" class="subtitle">Mean normalized elapsed time; lower is better</text>
+<line x1="94" y1="468.0" x2="950" y2="468.0" stroke="#d9e0e6"/>
+<text x="85" y="472.0" text-anchor="end" class="axis">0.01</text>
+<line x1="94" y1="280.0" x2="950" y2="280.0" stroke="#d9e0e6"/>
+<text x="85" y="284.0" text-anchor="end" class="axis">0.1</text>
+<line x1="94" y1="92.0" x2="950" y2="92.0" stroke="#d9e0e6"/>
+<text x="85" y="96.0" text-anchor="end" class="axis">1</text>
+<rect x="145.5" y="433.9" width="51.4" height="34.1" rx="2" fill="#2563a6"/>
+<text x="171.2" y="427.9" text-anchor="middle" class="value">0.015</text>
+<rect x="205.1" y="432.2" width="51.4" height="35.8" rx="2" fill="#d55e4f"/>
+<text x="230.8" y="426.2" text-anchor="middle" class="value">0.016</text>
+<text x="201.0" y="489" text-anchor="middle" class="label">128</text>
+<rect x="359.5" y="338.0" width="51.4" height="130.0" rx="2" fill="#2563a6"/>
+<text x="385.2" y="332.0" text-anchor="middle" class="value">0.049</text>
+<rect x="419.1" y="350.1" width="51.4" height="117.9" rx="2" fill="#d55e4f"/>
+<text x="444.8" y="344.1" text-anchor="middle" class="value">0.042</text>
+<text x="415.0" y="489" text-anchor="middle" class="label">256</text>
+<rect x="573.5" y="219.9" width="51.4" height="248.1" rx="2" fill="#2563a6"/>
+<text x="599.2" y="213.9" text-anchor="middle" class="value">0.209</text>
+<rect x="633.1" y="237.6" width="51.4" height="230.4" rx="2" fill="#d55e4f"/>
+<text x="658.8" y="231.6" text-anchor="middle" class="value">0.168</text>
+<text x="629.0" y="489" text-anchor="middle" class="label">512</text>
+<rect x="787.5" y="93.2" width="51.4" height="374.8" rx="2" fill="#2563a6"/>
+<text x="813.2" y="87.2" text-anchor="middle" class="value">0.986</text>
+<rect x="847.1" y="100.0" width="51.4" height="368.0" rx="2" fill="#d55e4f"/>
+<text x="872.8" y="94.0" text-anchor="middle" class="value">0.907</text>
+<text x="843.0" y="489" text-anchor="middle" class="label">1024</text>
+<rect x="94" y="496" width="14" height="14" fill="#2563a6"/><text x="115" y="508" class="label">Optimization 1</text>
+<rect x="522.0" y="496" width="14" height="14" fill="#d55e4f"/><text x="543.0" y="508" class="label">Optimization 2</text>
+<text x="42" y="280.0" transform="rotate(-90 42 280.0)" text-anchor="middle" class="axis">Mean seconds (log scale)</text>
+</svg>

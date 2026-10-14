@@ -1,0 +1,35 @@
+==67585== Callgrind, a call-graph generating cache profiler
+==67585== Copyright (C) 2002-2017, and GNU GPL'd, by Josef Weidendorfer et al.
+==67585== Using Valgrind-3.26.0 and LibVEX; rerun with -h for copyright info
+==67585== Command: /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/blur/blur 15 /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_1/blur/data/im2.ppm /tmp/a2-stage-profile.Lh7cao/blur_callgrind_output.ppm
+==67585== 
+--67585-- warning: L3 cache found, using its data for the LL simulation.
+--67585-- warning: specified LL cache: line_size 64  assoc 1  total_size 100,663,296
+--67585-- warning: simulated LL cache: line_size 64  assoc 2  total_size 134,217,728
+==67585== For interactive control, run 'callgrind_control -h'.
+==67585== brk segment overflow in thread #1: can't grow to 0x4899000
+==67585== (see section Limitations in user manual)
+==67585== NOTE: further instances of this message will not be shown
+==67585== 
+==67585== Events    : Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
+==67585== Collected : 8998453278 2578669413 3020584807 3276 14205452 12749869 2772 8043 279344 2476060611 6365539 85995807 1653
+==67585== 
+==67585== I   refs:      8,998,453,278
+==67585== I1  misses:            3,276
+==67585== LLi misses:            2,772
+==67585== I1  miss rate:          0.00%
+==67585== LLi miss rate:          0.00%
+==67585== 
+==67585== D   refs:      5,599,254,220  (2,578,669,413 rd + 3,020,584,807 wr)
+==67585== D1  misses:       26,955,321  (   14,205,452 rd +    12,749,869 wr)
+==67585== LLd misses:          287,387  (        8,043 rd +       279,344 wr)
+==67585== D1  miss rate:           0.5% (          0.6%   +           0.4%  )
+==67585== LLd miss rate:           0.0% (          0.0%   +           0.0%  )
+==67585== 
+==67585== LL refs:          26,958,597  (   14,208,728 rd +    12,749,869 wr)
+==67585== LL misses:           290,159  (       10,815 rd +       279,344 wr)
+==67585== LL miss rate:            0.0% (          0.0%   +           0.0%  )
+==67585== 
+==67585== Branches:      2,562,056,418  (2,476,060,611 cond +    85,995,807 ind)
+==67585== Mispredicts:       6,367,192  (    6,365,539 cond +         1,653 ind)
+==67585== Mispred rate:            0.2% (          0.3%     +           0.0%   )

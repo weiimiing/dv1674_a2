@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing: 0; }
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #586675; }
+.axis { font-size: 12px; fill: #586675; }
+.label { font-size: 13px; }
+.value { font-size: 12px; font-weight: 700; }
+</style>
+<rect width="1100" height="560" fill="#ffffff"/>
+<text x="32" y="34" class="title">Pearson Callgrind events: Optimization 1 vs Optimization 2</text>
+<text x="32" y="56" class="subtitle">Matched 512.data input; Optimization 1 normalized to 100%</text>
+<line x1="92" y1="456.0" x2="1052" y2="456.0" stroke="#d9e0e6"/>
+<text x="83" y="460.0" text-anchor="end" class="axis">0%</text>
+<line x1="92" y1="366.0" x2="1052" y2="366.0" stroke="#d9e0e6"/>
+<text x="83" y="370.0" text-anchor="end" class="axis">31%</text>
+<line x1="92" y1="276.0" x2="1052" y2="276.0" stroke="#d9e0e6"/>
+<text x="83" y="280.0" text-anchor="end" class="axis">62%</text>
+<line x1="92" y1="186.0" x2="1052" y2="186.0" stroke="#d9e0e6"/>
+<text x="83" y="190.0" text-anchor="end" class="axis">94%</text>
+<line x1="92" y1="96.0" x2="1052" y2="96.0" stroke="#d9e0e6"/>
+<text x="83" y="100.0" text-anchor="end" class="axis">125%</text>
+<rect x="130.5" y="168.0" width="38.4" height="288.0" rx="2" fill="#2563a6"/>
+<text x="149.7" y="162.0" text-anchor="middle" class="value">100%</text>
+<rect x="175.1" y="234.4" width="38.4" height="221.6" rx="2" fill="#d55e4f"/>
+<text x="194.3" y="228.4" text-anchor="middle" class="value">77%</text>
+<text x="172.0" y="477" text-anchor="middle" class="label">Instructions</text>
+<rect x="290.5" y="168.0" width="38.4" height="288.0" rx="2" fill="#2563a6"/>
+<text x="309.7" y="162.0" text-anchor="middle" class="value">100%</text>
+<rect x="335.1" y="236.4" width="38.4" height="219.6" rx="2" fill="#d55e4f"/>
+<text x="354.3" y="230.4" text-anchor="middle" class="value">76%</text>
+<text x="332.0" y="477" text-anchor="middle" class="label">Data refs</text>
+<rect x="450.5" y="168.0" width="38.4" height="288.0" rx="2" fill="#2563a6"/>
+<text x="469.7" y="162.0" text-anchor="middle" class="value">100%</text>
+<rect x="495.1" y="244.1" width="38.4" height="211.9" rx="2" fill="#d55e4f"/>
+<text x="514.3" y="238.1" text-anchor="middle" class="value">74%</text>
+<text x="492.0" y="477" text-anchor="middle" class="label">Branches</text>
+<rect x="610.5" y="168.0" width="38.4" height="288.0" rx="2" fill="#2563a6"/>
+<text x="629.7" y="162.0" text-anchor="middle" class="value">100%</text>
+<rect x="655.1" y="163.7" width="38.4" height="292.3" rx="2" fill="#d55e4f"/>
+<text x="674.3" y="157.7" text-anchor="middle" class="value">101%</text>
+<text x="652.0" y="477" text-anchor="middle" class="label">Branch misses</text>
+<rect x="770.5" y="168.0" width="38.4" height="288.0" rx="2" fill="#2563a6"/>
+<text x="789.7" y="162.0" text-anchor="middle" class="value">100%</text>
+<rect x="815.1" y="168.0" width="38.4" height="288.0" rx="2" fill="#d55e4f"/>
+<text x="834.3" y="162.0" text-anchor="middle" class="value">100%</text>
+<text x="812.0" y="477" text-anchor="middle" class="label">LL data misses</text>
+<rect x="930.5" y="168.0" width="38.4" height="288.0" rx="2" fill="#2563a6"/>
+<text x="949.7" y="162.0" text-anchor="middle" class="value">100%</text>
+<rect x="975.1" y="168.0" width="38.4" height="288.0" rx="2" fill="#d55e4f"/>
+<text x="994.3" y="162.0" text-anchor="middle" class="value">100%</text>
+<text x="972.0" y="477" text-anchor="middle" class="label">D1 data misses</text>
+<rect x="92" y="490" width="14" height="14" fill="#2563a6"/><text x="113" y="502" class="label">Optimization 1</text>
+<rect x="572.0" y="490" width="14" height="14" fill="#d55e4f"/><text x="593.0" y="502" class="label">Optimization 2</text>
+<text x="40" y="276.0" transform="rotate(-90 40 276.0)" text-anchor="middle" class="axis">Relative event count</text>
+</svg>
