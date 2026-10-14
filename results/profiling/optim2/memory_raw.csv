@@ -1,0 +1,5 @@
+program,input,max_rss_kb,direct_elapsed_seconds,user_seconds,system_seconds
+pearson,128.data,4692,0.00,0.00,0.00
+pearson,256.data,5460,0.00,0.04,0.00
+pearson,512.data,9344,0.18,0.18,0.06
+pearson,1024.data,24764,0.73,0.39,0.34

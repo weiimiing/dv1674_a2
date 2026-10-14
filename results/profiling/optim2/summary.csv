@@ -1,0 +1,5 @@
+stage,program,input,batches,executions,mean_elapsed_seconds,median_elapsed_seconds,avg_cpu_percent,avg_user_seconds,avg_system_seconds,max_rss_kb,correctness
+optim2,pearson,128.data,5,1000,0.015510,0.014650,117.34,0.007650,0.010550,4692,PASS
+optim2,pearson,256.data,5,400,0.042375,0.042125,119.12,0.023375,0.027100,5460,PASS
+optim2,pearson,512.data,5,60,0.168000,0.165000,79.86,0.078333,0.055833,9344,PASS
+optim2,pearson,1024.data,5,20,0.907000,0.875000,75.96,0.467500,0.221500,24764,PASS

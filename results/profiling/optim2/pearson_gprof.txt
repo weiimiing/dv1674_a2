@@ -4,12 +4,13 @@ Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
 100.00      0.02     0.02   523776     0.00     0.00  Vector::dot(Vector const&) const
-  0.00      0.02     0.00     3071     0.00     0.00  Vector::~Vector()
-  0.00      0.02     0.00     2047     0.00     0.00  Vector::Vector(Vector const&)
+  0.00      0.02     0.00     4095     0.00     0.00  Vector::~Vector()
+  0.00      0.02     0.00     3071     0.00     0.00  Vector::Vector(Vector const&)
   0.00      0.02     0.00     1024     0.00     0.00  Vector::get_data()
   0.00      0.02     0.00     1024     0.00     0.00  Vector::normalize()
   0.00      0.02     0.00     1024     0.00     0.00  Vector::Vector(unsigned int)
   0.00      0.02     0.00       22     0.00     0.00  Vector* std::__do_uninit_copy<Vector const*, Vector*>(Vector const*, Vector const*, Vector*)
+  0.00      0.02     0.00       20     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
   0.00      0.02     0.00       11     0.00     0.00  void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&)
   0.00      0.02     0.00        2     0.00     0.00  std::vector<Vector, std::allocator<Vector> >::~vector()
   0.00      0.02     0.00        2     0.00     0.00  std::vector<double, std::allocator<double> >::~vector()
@@ -60,11 +61,12 @@ index % time    self  children    called     name
                                                  <spontaneous>
 [1]    100.0    0.00    0.02                 main [1]
                 0.00    0.02       1/1           Analysis::correlation_coefficients(std::vector<Vector, std::allocator<Vector> >) [3]
-                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [19]
-                0.00    0.00       2/2           std::vector<Vector, std::allocator<Vector> >::~vector() [17]
-                0.00    0.00       2/2           std::vector<double, std::allocator<double> >::~vector() [18]
-                0.00    0.00       1/1           Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [20]
-                0.00    0.00       1/1           Dataset::write(std::vector<double, std::allocator<double> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
+                0.00    0.00    1024/3071        Vector::Vector(Vector const&) [11]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [20]
+                0.00    0.00       2/2           std::vector<Vector, std::allocator<Vector> >::~vector() [18]
+                0.00    0.00       2/2           std::vector<double, std::allocator<double> >::~vector() [19]
+                0.00    0.00       1/1           Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
+                0.00    0.00       1/1           Dataset::write(std::vector<double, std::allocator<double> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [22]
 -----------------------------------------------
                 0.02    0.00  523776/523776      Analysis::correlation_coefficients(std::vector<Vector, std::allocator<Vector> >) [3]
 [2]    100.0    0.02    0.00  523776         Vector::dot(Vector const&) const [2]
@@ -73,56 +75,61 @@ index % time    self  children    called     name
 [3]    100.0    0.00    0.02       1         Analysis::correlation_coefficients(std::vector<Vector, std::allocator<Vector> >) [3]
                 0.02    0.00  523776/523776      Vector::dot(Vector const&) const [2]
                 0.00    0.00    1024/1024        Vector::normalize() [13]
+                0.00    0.00      20/20          void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&) [16]
 -----------------------------------------------
-                0.00    0.00    1023/3071        void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [16]
-                0.00    0.00    1024/3071        std::vector<Vector, std::allocator<Vector> >::~vector() [17]
-                0.00    0.00    1024/3071        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [20]
-[10]     0.0    0.00    0.00    3071         Vector::~Vector() [10]
+                0.00    0.00    1023/4095        void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [17]
+                0.00    0.00    1024/4095        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
+                0.00    0.00    2048/4095        std::vector<Vector, std::allocator<Vector> >::~vector() [18]
+[10]     0.0    0.00    0.00    4095         Vector::~Vector() [10]
 -----------------------------------------------
-                0.00    0.00      11/2047        void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [16]
-                0.00    0.00    1013/2047        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [20]
-                0.00    0.00    1023/2047        Vector* std::__do_uninit_copy<Vector const*, Vector*>(Vector const*, Vector const*, Vector*) [15]
-[11]     0.0    0.00    0.00    2047         Vector::Vector(Vector const&) [11]
+                0.00    0.00      11/3071        void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [17]
+                0.00    0.00    1013/3071        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
+                0.00    0.00    1023/3071        Vector* std::__do_uninit_copy<Vector const*, Vector*>(Vector const*, Vector const*, Vector*) [15]
+                0.00    0.00    1024/3071        main [1]
+[11]     0.0    0.00    0.00    3071         Vector::Vector(Vector const&) [11]
 -----------------------------------------------
-                0.00    0.00    1024/1024        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [20]
+                0.00    0.00    1024/1024        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
 [12]     0.0    0.00    0.00    1024         Vector::get_data() [12]
 -----------------------------------------------
                 0.00    0.00    1024/1024        Analysis::correlation_coefficients(std::vector<Vector, std::allocator<Vector> >) [3]
 [13]     0.0    0.00    0.00    1024         Vector::normalize() [13]
 -----------------------------------------------
-                0.00    0.00    1024/1024        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [20]
+                0.00    0.00    1024/1024        Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
 [14]     0.0    0.00    0.00    1024         Vector::Vector(unsigned int) [14]
 -----------------------------------------------
-                0.00    0.00      22/22          void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [16]
+                0.00    0.00      22/22          void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [17]
 [15]     0.0    0.00    0.00      22         Vector* std::__do_uninit_copy<Vector const*, Vector*>(Vector const*, Vector const*, Vector*) [15]
-                0.00    0.00    1023/2047        Vector::Vector(Vector const&) [11]
+                0.00    0.00    1023/3071        Vector::Vector(Vector const&) [11]
 -----------------------------------------------
-                0.00    0.00      11/11          Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [20]
-[16]     0.0    0.00    0.00      11         void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [16]
-                0.00    0.00    1023/3071        Vector::~Vector() [10]
+                0.00    0.00      20/20          Analysis::correlation_coefficients(std::vector<Vector, std::allocator<Vector> >) [3]
+[16]     0.0    0.00    0.00      20         void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&) [16]
+-----------------------------------------------
+                0.00    0.00      11/11          Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
+[17]     0.0    0.00    0.00      11         void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [17]
+                0.00    0.00    1023/4095        Vector::~Vector() [10]
                 0.00    0.00      22/22          Vector* std::__do_uninit_copy<Vector const*, Vector*>(Vector const*, Vector const*, Vector*) [15]
-                0.00    0.00      11/2047        Vector::Vector(Vector const&) [11]
+                0.00    0.00      11/3071        Vector::Vector(Vector const&) [11]
 -----------------------------------------------
                 0.00    0.00       2/2           main [1]
-[17]     0.0    0.00    0.00       2         std::vector<Vector, std::allocator<Vector> >::~vector() [17]
-                0.00    0.00    1024/3071        Vector::~Vector() [10]
+[18]     0.0    0.00    0.00       2         std::vector<Vector, std::allocator<Vector> >::~vector() [18]
+                0.00    0.00    2048/4095        Vector::~Vector() [10]
 -----------------------------------------------
                 0.00    0.00       2/2           main [1]
-[18]     0.0    0.00    0.00       2         std::vector<double, std::allocator<double> >::~vector() [18]
+[19]     0.0    0.00    0.00       2         std::vector<double, std::allocator<double> >::~vector() [19]
 -----------------------------------------------
                 0.00    0.00       2/2           main [1]
-[19]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [19]
+[20]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [20]
 -----------------------------------------------
                 0.00    0.00       1/1           main [1]
-[20]     0.0    0.00    0.00       1         Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [20]
+[21]     0.0    0.00    0.00       1         Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
                 0.00    0.00    1024/1024        Vector::get_data() [12]
                 0.00    0.00    1024/1024        Vector::Vector(unsigned int) [14]
-                0.00    0.00    1024/3071        Vector::~Vector() [10]
-                0.00    0.00    1013/2047        Vector::Vector(Vector const&) [11]
-                0.00    0.00      11/11          void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [16]
+                0.00    0.00    1024/4095        Vector::~Vector() [10]
+                0.00    0.00    1013/3071        Vector::Vector(Vector const&) [11]
+                0.00    0.00      11/11          void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [17]
 -----------------------------------------------
                 0.00    0.00       1/1           main [1]
-[21]     0.0    0.00    0.00       1         Dataset::write(std::vector<double, std::allocator<double> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [21]
+[22]     0.0    0.00    0.00       1         Dataset::write(std::vector<double, std::allocator<double> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [22]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -215,8 +222,8 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [12] Vector::get_data()     [20] Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [17] std::vector<Vector, std::allocator<Vector> >::~vector()
-  [13] Vector::normalize()    [21] Dataset::write(std::vector<double, std::allocator<double> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [18] std::vector<double, std::allocator<double> >::~vector()
-  [14] Vector::Vector(unsigned int) [3] Analysis::correlation_coefficients(std::vector<Vector, std::allocator<Vector> >) [19] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
-  [11] Vector::Vector(Vector const&) [2] Vector::dot(Vector const&) const [15] Vector* std::__do_uninit_copy<Vector const*, Vector*>(Vector const*, Vector const*, Vector*)
-  [10] Vector::~Vector()      [16] void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&)
+  [12] Vector::get_data()     [21] Dataset::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [18] std::vector<Vector, std::allocator<Vector> >::~vector()
+  [13] Vector::normalize()    [22] Dataset::write(std::vector<double, std::allocator<double> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [16] void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+  [14] Vector::Vector(unsigned int) [3] Analysis::correlation_coefficients(std::vector<Vector, std::allocator<Vector> >) [19] std::vector<double, std::allocator<double> >::~vector()
+  [11] Vector::Vector(Vector const&) [2] Vector::dot(Vector const&) const [20] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  [10] Vector::~Vector()      [17] void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector const&>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector const&) [15] Vector* std::__do_uninit_copy<Vector const*, Vector*>(Vector const*, Vector const*, Vector*)

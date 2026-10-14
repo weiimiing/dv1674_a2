@@ -32,6 +32,26 @@ target_batch_seconds="${TARGET_BATCH_SECONDS:-2}"
 max_batch_iterations="${MAX_BATCH_ITERATIONS:-100000}"
 run_gprof="${RUN_GPROF:-1}"
 run_callgrind="${RUN_CALLGRIND:-1}"
+profile_target="${PROFILE_TARGET:-all}"
+
+case "$profile_target" in
+    all)
+        profile_pearson=1
+        profile_blur=1
+        ;;
+    pearson)
+        profile_pearson=1
+        profile_blur=0
+        ;;
+    blur)
+        profile_pearson=0
+        profile_blur=1
+        ;;
+    *)
+        echo "Error: PROFILE_TARGET must be 'all', 'pearson', or 'blur'." >&2
+        exit 1
+        ;;
+esac
 
 pearson_gprof_size="${PEARSON_GPROF_SIZE:-1024}"
 blur_gprof_image="${BLUR_GPROF_IMAGE:-im4}"
@@ -49,10 +69,14 @@ calibrated_iterations=1
 restore_normal_builds()
 {
     echo "Restoring normal builds for stage '$stage_name'..."
-    make -C "$pearson_dir" clean
-    make -C "$pearson_dir"
-    make -C "$blur_dir" clean
-    make -C "$blur_dir"
+    if ((profile_pearson)); then
+        make -C "$pearson_dir" clean
+        make -C "$pearson_dir"
+    fi
+    if ((profile_blur)); then
+        make -C "$blur_dir" clean
+        make -C "$blur_dir"
+    fi
 }
 
 cleanup()
@@ -65,10 +89,10 @@ cleanup()
     rm -rf -- "$temp_dir"
 
     echo "Cleaning build products for stage '$stage_name'..."
-    if [[ -d "$pearson_dir" ]]; then
+    if ((profile_pearson)) && [[ -d "$pearson_dir" ]]; then
         make -C "$pearson_dir" clean || clean_status=$?
     fi
-    if [[ -d "$blur_dir" ]]; then
+    if ((profile_blur)) && [[ -d "$blur_dir" ]]; then
         make -C "$blur_dir" clean || clean_status=$?
     fi
     set -e
@@ -93,12 +117,14 @@ if [[ ! -x /usr/bin/time ]]; then
     exit 1
 fi
 
-for required_dir in "$pearson_dir" "$blur_dir"; do
-    if [[ ! -d "$required_dir" ]]; then
-        echo "Error: expected application directory does not exist: $required_dir" >&2
-        exit 1
-    fi
-done
+if ((profile_pearson)) && [[ ! -d "$pearson_dir" ]]; then
+    echo "Error: expected application directory does not exist: $pearson_dir" >&2
+    exit 1
+fi
+if ((profile_blur)) && [[ ! -d "$blur_dir" ]]; then
+    echo "Error: expected application directory does not exist: $blur_dir" >&2
+    exit 1
+fi
 
 mkdir -p "$results_dir"
 : > "$correctness_log"
@@ -274,15 +300,19 @@ measure_blur()
     done
 }
 
-measure_pearson 128 100
-measure_pearson 256 20
-measure_pearson 512 3
-measure_pearson 1024 1
+if ((profile_pearson)); then
+    measure_pearson 128 100
+    measure_pearson 256 20
+    measure_pearson 512 3
+    measure_pearson 1024 1
+fi
 
-measure_blur im1 10
-measure_blur im2 5
-measure_blur im3 3
-measure_blur im4 1
+if ((profile_blur)); then
+    measure_blur im1 10
+    measure_blur im2 5
+    measure_blur im3 3
+    measure_blur im4 1
+fi
 
 awk -F, -v stage="$stage_name" '
 FILENAME == ARGV[1] {
@@ -352,31 +382,36 @@ get_cxxflags()
 }
 
 if [[ "$run_gprof" == "1" ]]; then
-    pearson_original_flags="$(get_cxxflags "$pearson_dir")"
-    blur_original_flags="$(get_cxxflags "$blur_dir")"
-
     echo
     echo "Building gprof-instrumented executables..."
-    make -C "$pearson_dir" clean
-    make -C "$pearson_dir" CXXFLAGS="$pearson_original_flags -g -pg"
-    make -C "$blur_dir" clean
-    make -C "$blur_dir" CXXFLAGS="$blur_original_flags -g -pg"
+    if ((profile_pearson)); then
+        pearson_original_flags="$(get_cxxflags "$pearson_dir")"
+        make -C "$pearson_dir" clean
+        make -C "$pearson_dir" CXXFLAGS="$pearson_original_flags -g -pg"
 
-    mkdir -p "$temp_dir/gprof_pearson" "$temp_dir/gprof_blur"
-    (
-        cd "$temp_dir/gprof_pearson"
-        "$pearson_dir/pearson" \
-            "$pearson_dir/data/${pearson_gprof_size}.data" \
-            "$temp_dir/pearson_gprof_output.data"
-        gprof "$pearson_dir/pearson" gmon.out > "$results_dir/pearson_gprof.txt"
-    )
-    (
-        cd "$temp_dir/gprof_blur"
-        "$blur_dir/blur" 15 \
-            "$blur_dir/data/${blur_gprof_image}.ppm" \
-            "$temp_dir/blur_gprof_output.ppm"
-        gprof "$blur_dir/blur" gmon.out > "$results_dir/blur_gprof.txt"
-    )
+        mkdir -p "$temp_dir/gprof_pearson"
+        (
+            cd "$temp_dir/gprof_pearson"
+            "$pearson_dir/pearson" \
+                "$pearson_dir/data/${pearson_gprof_size}.data" \
+                "$temp_dir/pearson_gprof_output.data"
+            gprof "$pearson_dir/pearson" gmon.out > "$results_dir/pearson_gprof.txt"
+        )
+    fi
+    if ((profile_blur)); then
+        blur_original_flags="$(get_cxxflags "$blur_dir")"
+        make -C "$blur_dir" clean
+        make -C "$blur_dir" CXXFLAGS="$blur_original_flags -g -pg"
+
+        mkdir -p "$temp_dir/gprof_blur"
+        (
+            cd "$temp_dir/gprof_blur"
+            "$blur_dir/blur" 15 \
+                "$blur_dir/data/${blur_gprof_image}.ppm" \
+                "$temp_dir/blur_gprof_output.ppm"
+            gprof "$blur_dir/blur" gmon.out > "$results_dir/blur_gprof.txt"
+        )
+    fi
 
     restore_normal_builds
 fi
@@ -423,35 +458,39 @@ append_callgrind_metrics()
 if [[ "$run_callgrind" == "1" ]]; then
     echo
     echo "Running Callgrind with cache and branch simulation..."
-    valgrind --tool=callgrind --cache-sim=yes --branch-sim=yes \
-        --callgrind-out-file="$results_dir/pearson_callgrind.out" \
-        "$pearson_dir/pearson" \
-        "$pearson_dir/data/${pearson_callgrind_size}.data" \
-        "$temp_dir/pearson_callgrind_output.data" \
-        2> "$results_dir/pearson_callgrind_log.txt"
+    if ((profile_pearson)); then
+        valgrind --tool=callgrind --cache-sim=yes --branch-sim=yes \
+            --callgrind-out-file="$results_dir/pearson_callgrind.out" \
+            "$pearson_dir/pearson" \
+            "$pearson_dir/data/${pearson_callgrind_size}.data" \
+            "$temp_dir/pearson_callgrind_output.data" \
+            2> "$results_dir/pearson_callgrind_log.txt"
 
-    callgrind_annotate --auto=yes --threshold=95 \
-        "$results_dir/pearson_callgrind.out" \
-        > "$results_dir/pearson_callgrind.txt" \
-        2> "$results_dir/pearson_callgrind_annotate_log.txt"
-    append_callgrind_metrics \
-        "pearson" "${pearson_callgrind_size}.data" \
-        "$results_dir/pearson_callgrind.out"
+        callgrind_annotate --auto=yes --threshold=95 \
+            "$results_dir/pearson_callgrind.out" \
+            > "$results_dir/pearson_callgrind.txt" \
+            2> "$results_dir/pearson_callgrind_annotate_log.txt"
+        append_callgrind_metrics \
+            "pearson" "${pearson_callgrind_size}.data" \
+            "$results_dir/pearson_callgrind.out"
+    fi
 
-    valgrind --tool=callgrind --cache-sim=yes --branch-sim=yes \
-        --callgrind-out-file="$results_dir/blur_callgrind.out" \
-        "$blur_dir/blur" 15 \
-        "$blur_dir/data/${blur_callgrind_image}.ppm" \
-        "$temp_dir/blur_callgrind_output.ppm" \
-        2> "$results_dir/blur_callgrind_log.txt"
+    if ((profile_blur)); then
+        valgrind --tool=callgrind --cache-sim=yes --branch-sim=yes \
+            --callgrind-out-file="$results_dir/blur_callgrind.out" \
+            "$blur_dir/blur" 15 \
+            "$blur_dir/data/${blur_callgrind_image}.ppm" \
+            "$temp_dir/blur_callgrind_output.ppm" \
+            2> "$results_dir/blur_callgrind_log.txt"
 
-    callgrind_annotate --auto=yes --threshold=95 \
-        "$results_dir/blur_callgrind.out" \
-        > "$results_dir/blur_callgrind.txt" \
-        2> "$results_dir/blur_callgrind_annotate_log.txt"
-    append_callgrind_metrics \
-        "blur" "${blur_callgrind_image}.ppm" \
-        "$results_dir/blur_callgrind.out"
+        callgrind_annotate --auto=yes --threshold=95 \
+            "$results_dir/blur_callgrind.out" \
+            > "$results_dir/blur_callgrind.txt" \
+            2> "$results_dir/blur_callgrind_annotate_log.txt"
+        append_callgrind_metrics \
+            "blur" "${blur_callgrind_image}.ppm" \
+            "$results_dir/blur_callgrind.out"
+    fi
 fi
 
 echo

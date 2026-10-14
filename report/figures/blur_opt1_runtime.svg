@@ -18,27 +18,27 @@ text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing:
 <text x="85" y="221.3" text-anchor="end" class="axis">1</text>
 <line x1="94" y1="92.0" x2="950" y2="92.0" stroke="#d9e0e6"/>
 <text x="85" y="96.0" text-anchor="end" class="axis">10</text>
-<rect x="145.5" y="297.8" width="51.4" height="170.2" rx="2" fill="#2563a6"/>
-<text x="171.2" y="291.8" text-anchor="middle" class="value">0.228</text>
-<rect x="205.1" y="324.0" width="51.4" height="144.0" rx="2" fill="#d55e4f"/>
-<text x="230.8" y="318.0" text-anchor="middle" class="value">0.141</text>
+<rect x="145.5" y="299.0" width="51.4" height="169.0" rx="2" fill="#2563a6"/>
+<text x="171.2" y="293.0" text-anchor="middle" class="value">0.223</text>
+<rect x="205.1" y="330.3" width="51.4" height="137.7" rx="2" fill="#d55e4f"/>
+<text x="230.8" y="324.3" text-anchor="middle" class="value">0.126</text>
 <text x="201.0" y="489" text-anchor="middle" class="label">im1</text>
-<rect x="359.5" y="260.8" width="51.4" height="207.2" rx="2" fill="#2563a6"/>
-<text x="385.2" y="254.8" text-anchor="middle" class="value">0.450</text>
-<rect x="419.1" y="284.9" width="51.4" height="183.1" rx="2" fill="#d55e4f"/>
-<text x="444.8" y="278.9" text-anchor="middle" class="value">0.289</text>
+<rect x="359.5" y="260.7" width="51.4" height="207.3" rx="2" fill="#2563a6"/>
+<text x="385.2" y="254.7" text-anchor="middle" class="value">0.451</text>
+<rect x="419.1" y="288.3" width="51.4" height="179.7" rx="2" fill="#d55e4f"/>
+<text x="444.8" y="282.3" text-anchor="middle" class="value">0.271</text>
 <text x="415.0" y="489" text-anchor="middle" class="label">im2</text>
-<rect x="573.5" y="231.6" width="51.4" height="236.4" rx="2" fill="#2563a6"/>
-<text x="599.2" y="225.6" text-anchor="middle" class="value">0.770</text>
-<rect x="633.1" y="260.2" width="51.4" height="207.8" rx="2" fill="#d55e4f"/>
-<text x="658.8" y="254.2" text-anchor="middle" class="value">0.455</text>
+<rect x="573.5" y="232.7" width="51.4" height="235.3" rx="2" fill="#2563a6"/>
+<text x="599.2" y="226.7" text-anchor="middle" class="value">0.755</text>
+<rect x="633.1" y="261.6" width="51.4" height="206.4" rx="2" fill="#d55e4f"/>
+<text x="658.8" y="255.6" text-anchor="middle" class="value">0.444</text>
 <text x="629.0" y="489" text-anchor="middle" class="label">im3</text>
-<rect x="787.5" y="143.4" width="51.4" height="324.6" rx="2" fill="#2563a6"/>
-<text x="813.2" y="137.4" text-anchor="middle" class="value">3.890</text>
-<rect x="847.1" y="167.0" width="51.4" height="301.0" rx="2" fill="#d55e4f"/>
-<text x="872.8" y="161.0" text-anchor="middle" class="value">2.520</text>
+<rect x="787.5" y="141.0" width="51.4" height="327.0" rx="2" fill="#2563a6"/>
+<text x="813.2" y="135.0" text-anchor="middle" class="value">4.068</text>
+<rect x="847.1" y="174.8" width="51.4" height="293.2" rx="2" fill="#d55e4f"/>
+<text x="872.8" y="168.8" text-anchor="middle" class="value">2.186</text>
 <text x="843.0" y="489" text-anchor="middle" class="label">im4</text>
 <rect x="94" y="496" width="14" height="14" fill="#2563a6"/><text x="115" y="508" class="label">O2 source baseline</text>
 <rect x="244" y="496" width="14" height="14" fill="#d55e4f"/><text x="265" y="508" class="label">Optimization 1</text>
-<text x="42" y="280.0" transform="rotate(-90 42 280.0)" text-anchor="middle" class="axis">Median seconds (log scale)</text>
+<text x="42" y="280.0" transform="rotate(-90 42 280.0)" text-anchor="middle" class="axis">Mean seconds (log scale)</text>
 </svg>

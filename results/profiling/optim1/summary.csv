@@ -1,0 +1,9 @@
+stage,program,input,batches,executions,mean_elapsed_seconds,median_elapsed_seconds,avg_cpu_percent,avg_user_seconds,avg_system_seconds,max_rss_kb,correctness
+optim1,pearson,128.data,5,1000,0.015190,0.015400,152.14,0.014020,0.009090,4736,PASS
+optim1,pearson,256.data,5,200,0.049150,0.048250,99.59,0.025400,0.023550,5372,PASS
+optim1,pearson,512.data,5,60,0.208833,0.199167,56.98,0.074500,0.044500,9392,PASS
+optim1,pearson,1024.data,5,10,0.986000,0.940000,93.91,0.572000,0.354000,24832,PASS
+optim1,blur,im1.ppm,5,100,0.125600,0.120000,73.73,0.078800,0.013800,11848,PASS
+optim1,blur,im2.ppm,5,50,0.271400,0.276000,78.48,0.181600,0.031400,19704,PASS
+optim1,blur,im3.ppm,5,30,0.443667,0.426667,77.61,0.307333,0.037000,32380,PASS
+optim1,blur,im4.ppm,5,5,2.186000,2.200000,94.69,1.970000,0.100000,135916,PASS
