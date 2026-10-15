@@ -102,42 +102,25 @@ Vector Vector::operator-(double sub)
 
     return result;
 }
-/// @brief Centre and normalize this vector in place.
-/// @details This function is used before the correlation pair loops so each dataset
-// is normalized only once. After normalization, the vector has a mean of
-// approximately zero and a magnitude of one. The Pearson correlation of
-// two normalized vectors can therefore be calculated with one dot product.
-// Modifying the existing data avoids allocating temporary vectors subtraction and division, which is more efficient. 
-void Vector::normalize(){
 
-    // Calculate the mean once. It remains constant while centering every
-    // element, so it is kept outside the following loop.
+void Vector:: normalize(){
+    // The mean is constant for every element in this vector.
     const double average = mean();
-    double squared_magnitude = 0.0;
 
-    // Subtract the mean and calculate the squared magnitude in the same
-    // loop. This loop fusion avoids making two separate passes over data.
+    // Centre the vector so its mean becomes approximately zero.
     for (unsigned i = 0; i < size; ++i) {
         data[i] -= average;
-        squared_magnitude += data[i] * data[i];
     }
-    // Calculate the square root and division only once. Multiplication by
-    // the reciprocal below is less expensive than dividing every element.
-    const double inverse_magnitude = 1.0 / std::sqrt(squared_magnitude);
-
-     // Scale the centred values so the vector has a magnitude of one.
+    // Calculate the magnitude after the values have been centred.
+     const double magnitude_value = magnitude();
+    // Scale the centred vector so its magnitude becomes one.
     for (unsigned i = 0; i < size; ++i) {
-        data[i] *= inverse_magnitude;  
+        data[i] /= magnitude_value;
     }
 }
-/// @brief Calculate the dot product of this vector and another vector.
-/// @param rhs The vector to calculate the dot product with.
-/// @return The dot product of the two vectors.
-/// @details Accept rhs as a const reference instead of passing it by value.
-/// This avoids creating a deep copy of the Vector for every dot product.
-/// The const qualifier guarantees that dot() cannot modify rhs and also
-/// allows const Vector objects, such as *this inside magnitude(), to be used.
-double Vector::dot(const Vector& rhs) const
+
+
+double Vector::dot(Vector rhs) const
 {
     double result{0};
 

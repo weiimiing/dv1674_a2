@@ -1,5 +1,0 @@
-stage,program,input,batches,executions,mean_elapsed_seconds,median_elapsed_seconds,avg_cpu_percent,avg_user_seconds,avg_system_seconds,max_rss_kb,correctness
-baseline,blur,im1.ppm,5,50,0.653800,0.655000,99.82,0.613600,0.039000,17028,PASS
-baseline,blur,im2.ppm,5,25,1.324000,1.314000,99.82,1.285600,0.036000,25596,PASS
-baseline,blur,im3.ppm,5,15,2.416667,2.396667,99.89,2.310667,0.103333,37344,PASS
-baseline,blur,im4.ppm,5,5,11.604000,11.520000,99.88,11.384000,0.206000,136104,PASS

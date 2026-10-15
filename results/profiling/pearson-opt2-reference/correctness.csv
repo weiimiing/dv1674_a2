@@ -1,0 +1,5 @@
+program,input,status
+pearson,128.data,PASS
+pearson,256.data,PASS
+pearson,512.data,PASS
+pearson,1024.data,PASS

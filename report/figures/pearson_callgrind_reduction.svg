@@ -20,23 +20,23 @@ text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing:
 <text x="82" y="185.0" text-anchor="end" class="axis">75.0</text>
 <line x1="90" y1="90.0" x2="1052" y2="90.0" stroke="#d9e0e6"/>
 <text x="82" y="94.0" text-anchor="end" class="axis">100.0</text>
-<rect x="125.3" y="157.2" width="89.8" height="296.8" rx="2" fill="#16847a"/>
-<text x="170.2" y="150.2" text-anchor="middle" class="value">81.5</text>
+<rect x="125.3" y="177.6" width="89.8" height="276.4" rx="2" fill="#16847a"/>
+<text x="170.2" y="170.6" text-anchor="middle" class="value">75.9</text>
 <text x="170.2" y="474.0" text-anchor="middle" class="label">Instructions</text>
-<rect x="285.6" y="158.2" width="89.8" height="295.8" rx="2" fill="#16847a"/>
-<text x="330.5" y="151.2" text-anchor="middle" class="value">81.3</text>
+<rect x="285.6" y="179.8" width="89.8" height="274.2" rx="2" fill="#16847a"/>
+<text x="330.5" y="172.8" text-anchor="middle" class="value">75.3</text>
 <text x="330.5" y="474.0" text-anchor="middle" class="label">Data refs</text>
-<rect x="445.9" y="151.4" width="89.8" height="302.6" rx="2" fill="#16847a"/>
-<text x="490.8" y="144.4" text-anchor="middle" class="value">83.1</text>
+<rect x="445.9" y="174.1" width="89.8" height="279.9" rx="2" fill="#16847a"/>
+<text x="490.8" y="167.1" text-anchor="middle" class="value">76.9</text>
 <text x="490.8" y="474.0" text-anchor="middle" class="label">Branches</text>
-<rect x="606.3" y="347.6" width="89.8" height="106.4" rx="2" fill="#16847a"/>
-<text x="651.2" y="340.6" text-anchor="middle" class="value">29.2</text>
+<rect x="606.3" y="354.3" width="89.8" height="99.7" rx="2" fill="#16847a"/>
+<text x="651.2" y="347.3" text-anchor="middle" class="value">27.4</text>
 <text x="651.2" y="474.0" text-anchor="middle" class="label">Branch misses</text>
-<rect x="766.6" y="311.4" width="89.8" height="142.6" rx="2" fill="#16847a"/>
-<text x="811.5" y="304.4" text-anchor="middle" class="value">39.2</text>
+<rect x="766.6" y="454.0" width="89.8" height="0.0" rx="2" fill="#16847a"/>
+<text x="811.5" y="447.0" text-anchor="middle" class="value">0.0</text>
 <text x="811.5" y="474.0" text-anchor="middle" class="label">LL data misses</text>
-<rect x="926.9" y="447.0" width="89.8" height="7.0" rx="2" fill="#16847a"/>
-<text x="971.8" y="440.0" text-anchor="middle" class="value">1.9</text>
+<rect x="926.9" y="451.1" width="89.8" height="2.9" rx="2" fill="#16847a"/>
+<text x="971.8" y="444.1" text-anchor="middle" class="value">0.8</text>
 <text x="971.8" y="474.0" text-anchor="middle" class="label">D1 data misses</text>
 <text x="46" y="272.0" transform="rotate(-90 46 272.0)" text-anchor="middle" class="axis">Reduction (%)</text>
 </svg>
