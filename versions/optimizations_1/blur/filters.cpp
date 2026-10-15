@@ -27,7 +27,6 @@ namespace Filter
         Matrix scratch{PPM::max_dimension};
         Matrix dst{ m.get_x_size(), m.get_y_size(), m.get_color_max() };
         
-        // Weights only depend on radius — compute once, reuse for both passes.
         double w[Gauss::max_radius]{};
         Gauss::get_weights(radius, w);
         
@@ -72,7 +71,7 @@ namespace Filter
         {
             for (auto y{0}; y < dst.get_y_size(); y++)
             {
-            
+
                 auto r{w[0] * scratch.r(x, y)}, g{w[0] * scratch.g(x, y)}, b{w[0] * scratch.b(x, y)}, n{w[0]};
 
                 for (auto wi{1}; wi <= radius; wi++)

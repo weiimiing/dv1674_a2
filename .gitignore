@@ -1,16 +1,9 @@
-# C/C++ build products
 *.o
-*.dSYM/
-
-# Assignment executables
-versions/*/blur/blur
-versions/*/pearson/pearson
-versions/*/pearson/verify
-
-# gprof output
+*.dSYM
 gmon.out
-gmon.out.*
-
-# Program outputs created beside the executables
-versions/*/blur/*.ppm
-versions/*/pearson/output.data
+blur
+blur_par
+pearson
+pearson_par
+.DS_Store
+data_o/
