@@ -1,12 +1,12 @@
 --------------------------------------------------------------------------------
-Profile data file '/home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/results/profiling/optim2/pearson_callgrind.out' (creator: callgrind-3.26.0)
+Profile data file '/home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/results/profiling/pearson-opt2-reference/pearson_callgrind.out' (creator: callgrind-3.26.0)
 --------------------------------------------------------------------------------
 I1 cache: 32768 B, 64 B, 8-way associative
 D1 cache: 49152 B, 64 B, 12-way associative
 LL cache: 134217728 B, 64 B, 2-way associative
 Timerange: Basic block 0 - 258349093
 Trigger: Program termination
-Profiled target:  /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_2/pearson/pearson /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_2/pearson/data/512.data /tmp/a2-stage-profile.Q06NZ8/pearson_callgrind_output.data (PID 58981, part 1)
+Profiled target:  /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_2/pearson/pearson /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/optimizations_2/pearson/data/512.data /tmp/a2-stage-profile.MIgHnf/pearson_callgrind_output.data (PID 90791, part 1)
 Events recorded:  Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
 Events shown:     Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
 Event sort order: Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
@@ -106,7 +106,7 @@ Ir                   Dr                   Dw               I1mr         D1mr    
           .                    .                .            .                  .               .          .          .               .                   .                .          .          .           
       1,536 ( 0.00%)           0              512 ( 0.00%)   1 ( 0.00%)         0               0          1 ( 0.04%) .               .                   .                .          .          .           Vector::Vector(unsigned size)
       8,700 ( 0.00%)           0            6,141 ( 0.00%)   0                  0             384 ( 0.25%) 0          0             127 ( 0.11%)          .                .          .          .               : size{size}, data{new double[size]}
-    372,067 ( 0.03%)      59,278 ( 0.02%)  40,824 ( 0.03%) 556 ( 0.13%)       240 ( 0.00%)  1,778 ( 1.17%) 0          0           1,023 ( 0.87%)     69,868 ( 0.04%)   2,947 ( 0.12%) 4,605 ( 0.04%) 1,015 ( 0.02%)  => ???:0x0000000004002310 (1,535x)
+    136,447 ( 0.01%)      25,311 ( 0.01%)  17,221 ( 0.01%) 315 ( 0.08%)        10 ( 0.00%)      7 ( 0.00%) 6 ( 0.22%) 0               1 ( 0.00%)     25,590 ( 0.01%)   2,069 ( 0.08%) 1,536 ( 0.01%) 513 ( 0.01%)  => ???:0x0000000004002310 (512x)
           .                    .                .            .                  .               .          .          .               .                   .                .          .          .           {
       1,024 ( 0.00%)       1,024 ( 0.00%)       .            .                  .               .          .          .               .                   .                .          .          .           }
           .                    .                .            .                  .               .          .          .               .                   .                .          .          .           
@@ -198,7 +198,7 @@ Ir                   Dr                   Dw               I1mr         D1mr    
           .                    .                .            .                  .               .          .          .               .                   .                .          .          .           double Vector::dot(const Vector& rhs) const
     130,816 ( 0.01%)           .                .            .                  .               .          .          .               .                   .                .          .          .           {
     262,656 ( 0.02%)           .                .            .                  .               .          .          .               .                   .                .          .          .               double result{0};
-          .                    .                .            .                  .               .          .          .               .                   .                .          .          .           
+          .                    .                .            .                  .               .          .          .               .                   .                .          .          .               
 202,112,256 (15.79%)     130,816 ( 0.04%)       0            0                130 ( 0.00%)      0          0          0               0          67,370,752 (34.07%) 131,392 ( 5.37%) .          .               for (auto i{0}; i < size; i++)
           .                    .                .            .                  .               .          .          .               .                   .                .          .          .               {
 201,850,624 (15.77%) 134,348,544 (37.55%)       0            0          8,434,184 (97.69%)      .          .          .               .                   .                .          .          .                   result += data[i] * rhs[i];
