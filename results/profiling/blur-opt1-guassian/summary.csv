@@ -1,0 +1,5 @@
+stage,program,input,batches,executions,mean_elapsed_seconds,median_elapsed_seconds,avg_cpu_percent,avg_user_seconds,avg_system_seconds,max_rss_kb,correctness
+blur-opt1-guassian,blur,im1.ppm,5,100,0.151400,0.152500,75.23,0.087900,0.026000,16864,PASS
+blur-opt1-guassian,blur,im2.ppm,5,50,0.329400,0.325000,79.54,0.221200,0.040800,25468,PASS
+blur-opt1-guassian,blur,im3.ppm,5,30,0.525000,0.526667,89.46,0.410333,0.059333,37304,PASS
+blur-opt1-guassian,blur,im4.ppm,5,5,2.688000,2.680000,91.29,2.304000,0.150000,135928,PASS
