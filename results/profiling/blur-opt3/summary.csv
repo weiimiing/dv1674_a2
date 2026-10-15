@@ -1,0 +1,5 @@
+stage,program,input,batches,executions,mean_elapsed_seconds,median_elapsed_seconds,avg_cpu_percent,avg_user_seconds,avg_system_seconds,max_rss_kb,correctness
+blur-opt3,blur,im1.ppm,5,400,0.047775,0.047750,117.27,0.041900,0.014125,11748,PASS
+blur-opt3,blur,im2.ppm,5,100,0.171400,0.160500,106.53,0.136400,0.046200,19556,PASS
+blur-opt3,blur,im3.ppm,5,120,0.185417,0.170417,77.35,0.123750,0.019667,32244,PASS
+blur-opt3,blur,im4.ppm,5,10,0.979000,0.940000,97.34,0.778000,0.175000,136060,PASS
