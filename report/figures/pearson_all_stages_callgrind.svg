@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="620" viewBox="0 0 1320 620">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing: 0; }
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #586675; }
+.axis { font-size: 12px; fill: #586675; }
+.label { font-size: 13px; }
+.value { font-size: 12px; font-weight: 700; }
+</style>
+<rect width="1320" height="620" fill="#ffffff"/>
+<text x="34" y="36" class="title">Matched Pearson Callgrind events on 512.data</text>
+<text x="34" y="58" class="subtitle">Baseline normalized to 100%; counts explain work, not native parallel runtime</text>
+<rect x="88" y="82" width="14" height="14" rx="2" fill="#17212b"/>
+<text x="109" y="94" class="label">Baseline</text>
+<rect x="373" y="82" width="14" height="14" rx="2" fill="#2563a6"/>
+<text x="394" y="94" class="label">Optimization 1</text>
+<rect x="658" y="82" width="14" height="14" rx="2" fill="#c58b18"/>
+<text x="679" y="94" class="label">Optimization 2</text>
+<rect x="943" y="82" width="14" height="14" rx="2" fill="#16847a"/>
+<text x="964" y="94" class="label">Parallel (8 threads)</text>
+<line x1="106" y1="524.0" x2="1268" y2="524.0" stroke="#d9e0e6"/>
+<text x="97" y="528.0" text-anchor="end" class="axis">0</text>
+<line x1="106" y1="443.6" x2="1268" y2="443.6" stroke="#d9e0e6"/>
+<text x="97" y="447.6" text-anchor="end" class="axis">35</text>
+<line x1="106" y1="363.2" x2="1268" y2="363.2" stroke="#d9e0e6"/>
+<text x="97" y="367.2" text-anchor="end" class="axis">70</text>
+<line x1="106" y1="282.8" x2="1268" y2="282.8" stroke="#d9e0e6"/>
+<text x="97" y="286.8" text-anchor="end" class="axis">105</text>
+<line x1="106" y1="202.4" x2="1268" y2="202.4" stroke="#d9e0e6"/>
+<text x="97" y="206.4" text-anchor="end" class="axis">140</text>
+<line x1="106" y1="122.0" x2="1268" y2="122.0" stroke="#d9e0e6"/>
+<text x="97" y="126.0" text-anchor="end" class="axis">175</text>
+<rect x="125.8" y="294.3" width="34.9" height="229.7" rx="2" fill="#17212b"/>
+<rect x="165.5" y="468.7" width="34.9" height="55.3" rx="2" fill="#2563a6"/>
+<rect x="205.3" y="481.5" width="34.9" height="42.5" rx="2" fill="#c58b18"/>
+<rect x="245.0" y="293.8" width="34.9" height="230.2" rx="2" fill="#16847a"/>
+<text x="202.8" y="546" text-anchor="middle" class="label">Instructions</text>
+<rect x="319.5" y="294.3" width="34.9" height="229.7" rx="2" fill="#17212b"/>
+<rect x="359.2" y="467.3" width="34.9" height="56.7" rx="2" fill="#2563a6"/>
+<rect x="398.9" y="480.8" width="34.9" height="43.2" rx="2" fill="#c58b18"/>
+<rect x="438.7" y="293.6" width="34.9" height="230.4" rx="2" fill="#16847a"/>
+<text x="396.5" y="546" text-anchor="middle" class="label">Data refs</text>
+<rect x="513.1" y="294.3" width="34.9" height="229.7" rx="2" fill="#17212b"/>
+<rect x="552.9" y="296.1" width="34.9" height="227.9" rx="2" fill="#2563a6"/>
+<rect x="592.6" y="296.2" width="34.9" height="227.8" rx="2" fill="#c58b18"/>
+<rect x="632.3" y="285.7" width="34.9" height="238.3" rx="2" fill="#16847a"/>
+<text x="590.2" y="546" text-anchor="middle" class="label">D1 misses</text>
+<rect x="706.8" y="294.3" width="34.9" height="229.7" rx="2" fill="#17212b"/>
+<rect x="746.5" y="294.3" width="34.9" height="229.7" rx="2" fill="#2563a6"/>
+<rect x="786.3" y="294.3" width="34.9" height="229.7" rx="2" fill="#c58b18"/>
+<rect x="826.0" y="157.3" width="34.9" height="366.7" rx="2" fill="#16847a"/>
+<text x="783.8" y="546" text-anchor="middle" class="label">LL misses</text>
+<rect x="900.5" y="294.3" width="34.9" height="229.7" rx="2" fill="#17212b"/>
+<rect x="940.2" y="471.0" width="34.9" height="53.0" rx="2" fill="#2563a6"/>
+<rect x="979.9" y="485.0" width="34.9" height="39.0" rx="2" fill="#c58b18"/>
+<rect x="1019.7" y="293.9" width="34.9" height="230.1" rx="2" fill="#16847a"/>
+<text x="977.5" y="546" text-anchor="middle" class="label">Branches</text>
+<rect x="1094.1" y="294.3" width="34.9" height="229.7" rx="2" fill="#17212b"/>
+<rect x="1133.9" y="357.2" width="34.9" height="166.8" rx="2" fill="#2563a6"/>
+<rect x="1173.6" y="354.8" width="34.9" height="169.2" rx="2" fill="#c58b18"/>
+<rect x="1213.3" y="307.6" width="34.9" height="216.4" rx="2" fill="#16847a"/>
+<text x="1171.2" y="546" text-anchor="middle" class="label">Branch misses</text>
+<text x="41" y="323.0" transform="rotate(-90 41 323.0)" text-anchor="middle" class="axis">Event count relative to baseline (%)</text>
+</svg>

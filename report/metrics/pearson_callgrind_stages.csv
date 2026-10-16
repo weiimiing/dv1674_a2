@@ -1,0 +1,5 @@
+stage,input,threads,instruction_refs,data_refs,data_l1_misses,data_ll_misses,branches,branch_mispredicts,instruction_refs_percent_of_baseline,data_refs_percent_of_baseline,data_l1_misses_percent_of_baseline,data_ll_misses_percent_of_baseline,branches_percent_of_baseline,branch_mispredicts_percent_of_baseline
+Baseline,512.data,1,6915445050,2589147275,8857982,124948,1226027961,9039809,100.00,100.00,100.00,100.00,100.00,100.00
+Optimization 1,512.data,1,1663581043,639052555,8787089,124942,283098999,6563063,24.06,24.68,99.20,100.00,23.09,72.60
+Optimization 2,512.data,1,1280067705,487227933,8785969,124947,208246535,6660323,18.51,18.82,99.19,100.00,16.99,73.68
+Parallel,512.data,8,6928728678,2597065219,9187571,199467,1228237941,8515566,100.19,100.31,103.72,159.64,100.18,94.20
