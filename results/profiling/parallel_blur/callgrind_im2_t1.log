@@ -1,0 +1,35 @@
+==203423== Callgrind, a call-graph generating cache profiler
+==203423== Copyright (C) 2002-2017, and GNU GPL'd, by Josef Weidendorfer et al.
+==203423== Using Valgrind-3.26.0 and LibVEX; rerun with -h for copyright info
+==203423== Command: /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/parallel/blur/blur_par 15 /home/weiming/Documents/PerformanceOpt/Assignment2/dv1674_a2/versions/parallel/blur/data/im2.ppm /tmp/a2-parallel-blur.6g8g2E/callgrind_im2_t1.ppm 1
+==203423== 
+--203423-- warning: L3 cache found, using its data for the LL simulation.
+--203423-- warning: specified LL cache: line_size 64  assoc 1  total_size 100,663,296
+--203423-- warning: simulated LL cache: line_size 64  assoc 2  total_size 134,217,728
+==203423== For interactive control, run 'callgrind_control -h'.
+==203423== brk segment overflow in thread #1: can't grow to 0x489b000
+==203423== (see section Limitations in user manual)
+==203423== NOTE: further instances of this message will not be shown
+==203423== 
+==203423== Events    : Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim
+==203423== Collected : 9079028490 2342360151 2910975272 3633 11261055 9705202 3030 8062 279461 2477110809 6366898 85995886 6293140
+==203423== 
+==203423== I   refs:      9,079,028,490
+==203423== I1  misses:            3,633
+==203423== LLi misses:            3,030
+==203423== I1  miss rate:          0.00%
+==203423== LLi miss rate:          0.00%
+==203423== 
+==203423== D   refs:      5,253,335,423  (2,342,360,151 rd + 2,910,975,272 wr)
+==203423== D1  misses:       20,966,257  (   11,261,055 rd +     9,705,202 wr)
+==203423== LLd misses:          287,523  (        8,062 rd +       279,461 wr)
+==203423== D1  miss rate:           0.4% (          0.5%   +           0.3%  )
+==203423== LLd miss rate:           0.0% (          0.0%   +           0.0%  )
+==203423== 
+==203423== LL refs:          20,969,890  (   11,264,688 rd +     9,705,202 wr)
+==203423== LL misses:           290,553  (       11,092 rd +       279,461 wr)
+==203423== LL miss rate:            0.0% (          0.0%   +           0.0%  )
+==203423== 
+==203423== Branches:      2,563,106,695  (2,477,110,809 cond +    85,995,886 ind)
+==203423== Mispredicts:      12,660,038  (    6,366,898 cond +     6,293,140 ind)
+==203423== Mispred rate:            0.5% (          0.3%     +           7.3%   )

@@ -5,7 +5,7 @@ set -euo pipefail
 repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 pearson_dir="${PEARSON_DIR:-$repo_root/versions/parallel/pearson_par}"
 reference_dir="${REFERENCE_DIR:-$repo_root/results/reference/pearson}"
-results_dir="${RESULTS_DIR:-$repo_root/results/profiling/parallel_pearson}"
+results_dir="${PEARSON_RESULTS_DIR:-${RESULTS_DIR:-$repo_root/results/profiling/parallel_pearson}}"
 
 read -r -a dataset_sizes <<< "${DATASET_SIZES:-128 256 512 1024}"
 

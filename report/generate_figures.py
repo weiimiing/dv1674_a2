@@ -136,6 +136,7 @@ def svg_start(width, height):
         ".axis { font-size: 12px; fill: #586675; }",
         ".label { font-size: 13px; }",
         ".value { font-size: 12px; font-weight: 700; }",
+        ".value-small { font-size: 10px; font-weight: 700; }",
         "</style>",
         f'<rect width="{width}" height="{height}" fill="{COLORS["paper"]}"/>',
     ]
@@ -324,7 +325,8 @@ def series_legend(lines, x, y, series, spacing=220):
 
 def multi_grouped_bars(
         lines, x, y, width, height, labels, series, axis_label,
-        minimum=0.0, maximum=None, logarithmic=False):
+        minimum=0.0, maximum=None, logarithmic=False, show_values=False,
+        value_suffix="", value_decimals=2, compact_values=False):
     left = x + 78
     right = x + width - 24
     top = y + 10
@@ -388,6 +390,13 @@ def multi_grouped_bars(
                 f'<rect x="{bx:.1f}" y="{by:.1f}" width="{bar_width:.1f}" '
                 f'height="{bottom - by:.1f}" rx="2" fill="{color}"/>'
             )
+            if show_values:
+                value_class = "value-small" if compact_values else "value"
+                lines.append(
+                    f'<text x="{bx + bar_width / 2:.1f}" y="{by - 6:.1f}" '
+                    f'text-anchor="middle" class="{value_class}">'
+                    f'{value:.{value_decimals}f}{esc(value_suffix)}</text>'
+                )
         lines.append(
             f'<text x="{center:.1f}" y="{bottom + 22}" text-anchor="middle" '
             f'class="label">{esc(label)}</text>'
@@ -403,7 +412,8 @@ def multi_grouped_bars(
 
 def multi_series_line_chart(
         lines, x, y, width, height, labels, series, axis_label,
-        minimum, maximum, suffix="", reference=None, show_values=False):
+        minimum, maximum, suffix="", reference=None, show_values=False,
+        value_offsets=None, point_value_offsets=None, compact_values=False):
     left = x + 72
     right = x + width - 28
     top = y + 10
@@ -445,19 +455,29 @@ def multi_series_line_chart(
             f'text-anchor="end" class="axis">{esc(reference_name)}</text>'
         )
 
-    for _, values, color in series:
+    for series_index, (_, values, color) in enumerate(series):
         points = [(xx, scale(value)) for xx, value in zip(x_positions, values)]
         lines.append(
             '<polyline points="' +
             " ".join(f"{xx:.1f},{yy:.1f}" for xx, yy in points) +
             f'" fill="none" stroke="{color}" stroke-width="3"/>'
         )
-        for value, (xx, yy) in zip(values, points):
+        for point_index, (value, (xx, yy)) in enumerate(zip(values, points)):
             lines.append(f'<circle cx="{xx:.1f}" cy="{yy:.1f}" r="5" fill="{color}"/>')
             if show_values:
+                if point_value_offsets:
+                    label_x_offset, label_y_offset = (
+                        point_value_offsets[series_index][point_index]
+                    )
+                elif value_offsets:
+                    label_x_offset, label_y_offset = value_offsets[series_index]
+                else:
+                    label_x_offset, label_y_offset = 0, -10
+                value_class = "value-small" if compact_values else "value"
                 lines.append(
-                    f'<text x="{xx:.1f}" y="{yy - 10:.1f}" text-anchor="middle" '
-                    f'class="value">{value:.2f}{esc(suffix)}</text>'
+                    f'<text x="{xx + label_x_offset:.1f}" '
+                    f'y="{yy + label_y_offset:.1f}" text-anchor="middle" '
+                    f'class="{value_class}">{value:.2f}{esc(suffix)}</text>'
                 )
 
     for label, xx in zip(labels, x_positions):
@@ -555,6 +575,7 @@ def generate_report_suite(metric, output_directory):
     multi_grouped_bars(
         lines, 28, 112, 1184, 470, input_labels, runtime_series,
         f"{metric_title} seconds", logarithmic=True,
+        show_values=True, value_suffix="s", value_decimals=3,
     )
     emit("pearson_all_stages_runtime.svg", lines)
 
@@ -583,6 +604,8 @@ def generate_report_suite(metric, output_directory):
     multi_series_line_chart(
         lines, 28, 112, 1184, 440, input_labels, speedup_series,
         "Speedup over baseline", 0, max(2, speedup_maximum), suffix="x",
+        show_values=True,
+        value_offsets=((-24, 20), (24, -11), (-24, -11), (24, 20)),
     )
     emit("pearson_all_stages_speedup.svg", lines)
 
@@ -614,7 +637,14 @@ def generate_report_suite(metric, output_directory):
     multi_series_line_chart(
         lines, 28, 112, 1184, 440, input_labels, memory_series,
         "Peak RSS relative to baseline", memory_minimum, memory_maximum,
-        suffix="%",
+        suffix="%", show_values=True,
+        point_value_offsets=(
+            ((-24, 40), (-24, -14), (-24, -25), (-24, 40)),
+            ((24, -28), (24, -10), (24, 25), (24, -30)),
+            ((-24, -28), (-24, 20), (-24, 25), (-24, -15)),
+            ((24, 28), (24, -30), (24, -25), (24, 18)),
+        ),
+        compact_values=True,
     )
     emit("pearson_all_stages_memory.svg", lines)
 
@@ -675,16 +705,30 @@ def generate_report_suite(metric, output_directory):
         lines, 28, 112, 1264, 470,
         [label for label, _ in callgrind_fields], callgrind_series,
         "Event count relative to baseline (%)", maximum=callgrind_maximum,
+        show_values=True, value_suffix="%", value_decimals=0,
+        compact_values=True,
     )
     emit("pearson_all_stages_callgrind.svg", lines)
 
     dataset_colors = [COLORS["blue"], COLORS["teal"], COLORS["gold"], COLORS["coral"]]
     parallel_speedup_series = []
+    parallel_mean_speedup_series = []
     parallel_efficiency_series = []
     for input_name, color in zip(input_names, dataset_colors):
         rows = [parallel_by_key[(input_name, threads)] for threads in thread_counts]
+        one_thread_mean = float(rows[0]["mean_elapsed_seconds"])
         parallel_speedup_series.append(
             (Path(input_name).stem, [float(row["speedup"]) for row in rows], color)
+        )
+        parallel_mean_speedup_series.append(
+            (
+                Path(input_name).stem,
+                [
+                    one_thread_mean / float(row["mean_elapsed_seconds"])
+                    for row in rows
+                ],
+                color,
+            )
         )
         parallel_efficiency_series.append(
             (
@@ -695,6 +739,13 @@ def generate_report_suite(metric, output_directory):
         )
 
     thread_labels = [str(value) for value in thread_counts]
+    parallel_speedup_maximum = math.ceil(
+        max(
+            value
+            for _, values, _ in parallel_speedup_series
+            for value in values
+        ) * 1.15 * 2
+    ) / 2
     lines = svg_start(1240, 620)
     panel_title(
         lines, 34, 36, "Parallel Pearson speedup by thread count",
@@ -703,10 +754,32 @@ def generate_report_suite(metric, output_directory):
     series_legend(lines, 88, 94, parallel_speedup_series, spacing=220)
     multi_series_line_chart(
         lines, 28, 112, 1184, 470, thread_labels, parallel_speedup_series,
-        "Speedup", 0, maximum_threads, suffix="x",
-        reference=("Ideal linear speedup", [float(value) for value in thread_counts]),
+        "Speedup", 0, parallel_speedup_maximum, suffix="x",
+        show_values=True,
+        value_offsets=((-24, 20), (24, 20), (-24, -11), (24, -11)),
     )
     emit("parallel_speedup.svg", lines)
+
+    parallel_mean_speedup_maximum = math.ceil(
+        max(
+            value
+            for _, values, _ in parallel_mean_speedup_series
+            for value in values
+        ) * 1.15 * 2
+    ) / 2
+    lines = svg_start(1240, 620)
+    panel_title(
+        lines, 34, 36, "Parallel Pearson mean speedup by thread count",
+        "Mean elapsed time relative to the parallel implementation's one-thread run",
+    )
+    series_legend(lines, 88, 94, parallel_mean_speedup_series, spacing=220)
+    multi_series_line_chart(
+        lines, 28, 112, 1184, 470, thread_labels,
+        parallel_mean_speedup_series, "Mean speedup", 0,
+        parallel_mean_speedup_maximum, suffix="x", show_values=True,
+        value_offsets=((-24, 20), (24, 20), (-24, -11), (24, -11)),
+    )
+    emit("parallel_mean_speedup.svg", lines)
 
     lines = svg_start(1240, 600)
     panel_title(
@@ -717,6 +790,14 @@ def generate_report_suite(metric, output_directory):
     multi_series_line_chart(
         lines, 28, 112, 1184, 440, thread_labels, parallel_efficiency_series,
         "Parallel efficiency", 0, 100, suffix="%",
+        show_values=True,
+        point_value_offsets=(
+            ((-32, 35), (-24, 20), (-24, 20), (-24, 20), (-24, 20)),
+            ((32, 35), (24, 20), (24, 20), (24, 20), (24, 20)),
+            ((-32, -10), (-24, -11), (-24, -11), (-24, -11), (-24, -11)),
+            ((32, -10), (24, -11), (24, -11), (24, -11), (24, -11)),
+        ),
+        compact_values=True,
     )
     emit("parallel_efficiency.svg", lines)
 

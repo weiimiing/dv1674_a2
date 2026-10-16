@@ -6,6 +6,7 @@ text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing:
 .axis { font-size: 12px; fill: #586675; }
 .label { font-size: 13px; }
 .value { font-size: 12px; font-weight: 700; }
+.value-small { font-size: 10px; font-weight: 700; }
 </style>
 <rect width="1240" height="600" fill="#ffffff"/>
 <text x="34" y="36" class="title">Parallel Pearson CPU utilization on larger workloads</text>
