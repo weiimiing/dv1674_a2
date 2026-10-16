@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="620" viewBox="0 0 1240 620">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing: 0; }
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #586675; }
+.axis { font-size: 12px; fill: #586675; }
+.label { font-size: 13px; }
+.value { font-size: 12px; font-weight: 700; }
+</style>
+<rect width="1240" height="620" fill="#ffffff"/>
+<text x="34" y="36" class="title">Pearson runtime across all implementation stages</text>
+<text x="34" y="58" class="subtitle">Mean elapsed time per execution; parallel stage uses 8 threads</text>
+<rect x="82" y="82" width="14" height="14" rx="2" fill="#17212b"/>
+<text x="103" y="94" class="label">Baseline</text>
+<rect x="352" y="82" width="14" height="14" rx="2" fill="#2563a6"/>
+<text x="373" y="94" class="label">Optimization 1</text>
+<rect x="622" y="82" width="14" height="14" rx="2" fill="#c58b18"/>
+<text x="643" y="94" class="label">Optimization 2</text>
+<rect x="892" y="82" width="14" height="14" rx="2" fill="#16847a"/>
+<text x="913" y="94" class="label">Parallel (8 threads)</text>
+<line x1="106" y1="524.0" x2="1188" y2="524.0" stroke="#d9e0e6"/>
+<text x="97" y="528.0" text-anchor="end" class="axis">0.01</text>
+<line x1="106" y1="390.0" x2="1188" y2="390.0" stroke="#d9e0e6"/>
+<text x="97" y="394.0" text-anchor="end" class="axis">0.1</text>
+<line x1="106" y1="256.0" x2="1188" y2="256.0" stroke="#d9e0e6"/>
+<text x="97" y="260.0" text-anchor="end" class="axis">1</text>
+<line x1="106" y1="122.0" x2="1188" y2="122.0" stroke="#d9e0e6"/>
+<text x="97" y="126.0" text-anchor="end" class="axis">10</text>
+<rect x="148.4" y="484.5" width="42.0" height="39.5" rx="2" fill="#17212b"/>
+<rect x="196.3" y="499.7" width="42.0" height="24.3" rx="2" fill="#2563a6"/>
+<rect x="244.2" y="501.4" width="42.0" height="22.6" rx="2" fill="#c58b18"/>
+<rect x="292.1" y="478.2" width="42.0" height="45.8" rx="2" fill="#16847a"/>
+<text x="241.2" y="546" text-anchor="middle" class="label">128</text>
+<rect x="418.9" y="393.4" width="42.0" height="130.6" rx="2" fill="#17212b"/>
+<rect x="466.8" y="431.3" width="42.0" height="92.7" rx="2" fill="#2563a6"/>
+<rect x="514.7" y="430.6" width="42.0" height="93.4" rx="2" fill="#c58b18"/>
+<rect x="562.6" y="405.4" width="42.0" height="118.6" rx="2" fill="#16847a"/>
+<text x="511.8" y="546" text-anchor="middle" class="label">256</text>
+<rect x="689.4" y="288.4" width="42.0" height="235.6" rx="2" fill="#17212b"/>
+<rect x="737.3" y="347.1" width="42.0" height="176.9" rx="2" fill="#2563a6"/>
+<rect x="785.2" y="360.4" width="42.0" height="163.6" rx="2" fill="#c58b18"/>
+<rect x="833.1" y="340.7" width="42.0" height="183.3" rx="2" fill="#16847a"/>
+<text x="782.2" y="546" text-anchor="middle" class="label">512</text>
+<rect x="959.9" y="181.8" width="42.0" height="342.2" rx="2" fill="#17212b"/>
+<rect x="1007.8" y="256.8" width="42.0" height="267.2" rx="2" fill="#2563a6"/>
+<rect x="1055.7" y="266.1" width="42.0" height="257.9" rx="2" fill="#c58b18"/>
+<rect x="1103.6" y="251.1" width="42.0" height="272.9" rx="2" fill="#16847a"/>
+<text x="1052.8" y="546" text-anchor="middle" class="label">1024</text>
+<text x="41" y="323.0" transform="rotate(-90 41 323.0)" text-anchor="middle" class="axis">Mean seconds (log scale)</text>
+</svg>

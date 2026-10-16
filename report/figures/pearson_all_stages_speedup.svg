@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="600" viewBox="0 0 1240 600">
+<style>
+text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; letter-spacing: 0; }
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { font-size: 14px; fill: #586675; }
+.axis { font-size: 12px; fill: #586675; }
+.label { font-size: 13px; }
+.value { font-size: 12px; font-weight: 700; }
+</style>
+<rect width="1240" height="600" fill="#ffffff"/>
+<text x="34" y="36" class="title">Pearson speedup relative to the sequential baseline</text>
+<text x="34" y="58" class="subtitle">Calculated from mean elapsed time; baseline is 1.0x</text>
+<rect x="82" y="82" width="14" height="14" rx="2" fill="#17212b"/>
+<text x="103" y="94" class="label">Baseline</text>
+<rect x="352" y="82" width="14" height="14" rx="2" fill="#2563a6"/>
+<text x="373" y="94" class="label">Optimization 1</text>
+<rect x="622" y="82" width="14" height="14" rx="2" fill="#c58b18"/>
+<text x="643" y="94" class="label">Optimization 2</text>
+<rect x="892" y="82" width="14" height="14" rx="2" fill="#16847a"/>
+<text x="913" y="94" class="label">Parallel (8 threads)</text>
+<line x1="100" y1="504.0" x2="1184" y2="504.0" stroke="#d9e0e6"/>
+<text x="91" y="508.0" text-anchor="end" class="axis">0.0x</text>
+<line x1="100" y1="427.6" x2="1184" y2="427.6" stroke="#d9e0e6"/>
+<text x="91" y="431.6" text-anchor="end" class="axis">1.2x</text>
+<line x1="100" y1="351.2" x2="1184" y2="351.2" stroke="#d9e0e6"/>
+<text x="91" y="355.2" text-anchor="end" class="axis">2.4x</text>
+<line x1="100" y1="274.8" x2="1184" y2="274.8" stroke="#d9e0e6"/>
+<text x="91" y="278.8" text-anchor="end" class="axis">3.6x</text>
+<line x1="100" y1="198.4" x2="1184" y2="198.4" stroke="#d9e0e6"/>
+<text x="91" y="202.4" text-anchor="end" class="axis">4.8x</text>
+<line x1="100" y1="122.0" x2="1184" y2="122.0" stroke="#d9e0e6"/>
+<text x="91" y="126.0" text-anchor="end" class="axis">6.0x</text>
+<polyline points="100.0,440.3 461.3,440.3 822.7,440.3 1184.0,440.3" fill="none" stroke="#17212b" stroke-width="3"/>
+<circle cx="100.0" cy="440.3" r="5" fill="#17212b"/>
+<circle cx="461.3" cy="440.3" r="5" fill="#17212b"/>
+<circle cx="822.7" cy="440.3" r="5" fill="#17212b"/>
+<circle cx="1184.0" cy="440.3" r="5" fill="#17212b"/>
+<polyline points="100.0,421.3 461.3,381.8 822.7,329.4 1184.0,272.8" fill="none" stroke="#2563a6" stroke-width="3"/>
+<circle cx="100.0" cy="421.3" r="5" fill="#2563a6"/>
+<circle cx="461.3" cy="381.8" r="5" fill="#2563a6"/>
+<circle cx="822.7" cy="329.4" r="5" fill="#2563a6"/>
+<circle cx="1184.0" cy="272.8" r="5" fill="#2563a6"/>
+<polyline points="100.0,418.9 461.3,383.4 822.7,284.9 1184.0,232.8" fill="none" stroke="#c58b18" stroke-width="3"/>
+<circle cx="100.0" cy="418.9" r="5" fill="#c58b18"/>
+<circle cx="461.3" cy="383.4" r="5" fill="#c58b18"/>
+<circle cx="822.7" cy="284.9" r="5" fill="#c58b18"/>
+<circle cx="1184.0" cy="232.8" r="5" fill="#c58b18"/>
+<polyline points="100.0,446.9 461.3,425.8 822.7,347.7 1184.0,294.5" fill="none" stroke="#16847a" stroke-width="3"/>
+<circle cx="100.0" cy="446.9" r="5" fill="#16847a"/>
+<circle cx="461.3" cy="425.8" r="5" fill="#16847a"/>
+<circle cx="822.7" cy="347.7" r="5" fill="#16847a"/>
+<circle cx="1184.0" cy="294.5" r="5" fill="#16847a"/>
+<text x="100.0" y="526" text-anchor="middle" class="label">128</text>
+<text x="461.3" y="526" text-anchor="middle" class="label">256</text>
+<text x="822.7" y="526" text-anchor="middle" class="label">512</text>
+<text x="1184.0" y="526" text-anchor="middle" class="label">1024</text>
+<text x="41" y="313.0" transform="rotate(-90 41 313.0)" text-anchor="middle" class="axis">Speedup over baseline</text>
+</svg>
