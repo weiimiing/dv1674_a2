@@ -31,8 +31,8 @@ namespace Filter
         double w[Gauss::max_radius]{};
         Gauss::get_weights(radius, w);
 
-        const auto w_size = dst.get_x_size();   // loop bound, fetch once not per iteration
-        const auto h_size = dst.get_y_size();  
+        const auto w_size = dst.get_x_size();   // loop bound,
+        const auto h_size = dst.get_y_size();   // fetch once not per iteration
         
         for (auto x{0}; x < w_size; x++)
         {
@@ -51,7 +51,7 @@ namespace Filter
                     auto x2{x - wi};
                     if (x2 >= 0)
                     {
-                        r += wc * m.r(x2, y);
+                        r += wc * m.r(x2, y); //return R[y*x_size+x]
                         g += wc * m.g(x2, y);
                         b += wc * m.b(x2, y);
                         n += wc;
