@@ -5,12 +5,26 @@
 #include <pthread.h>
 #include <vector>
 
+
+
+// Parallel blur.
+//
+// Both passes of the blur are decomposed by ROW BANDS. Each thread handles
+// a contiguous range of output rows and writes only to those rows. No
+// thread touches another thread's output, so no mutex or atomic is needed
+//
+// The two passes are separated by a pthread_join barrier: pass 2 must not
+// start until every row of `scratch` has been written by pass 1
+
 namespace Filter
 {
 
     namespace
     {
-        // Everything a worker needs for pass 1 (horizontal blur).
+        // Everything for pass 1 (horizontal blur)
+        // No other thread writes
+        // to those rows, and no other thread writes to any row this thread
+        // reads from m, so this is fully thread-safe with no synchronisation.
         struct Pass1Args {
             const Matrix* src;
             Matrix* scratch;
@@ -20,7 +34,7 @@ namespace Filter
             unsigned y_end;
         };
 
-        // Everything a worker needs for pass 2 (vertical blur).
+        // Everythingfor pass 2 (vertical blur)
         struct Pass2Args {
             const Matrix* scratch;
             Matrix* dst;
@@ -31,7 +45,7 @@ namespace Filter
             unsigned y_end;
         };
 
-        // Pass 1 worker: horizontal blur of rows [y_start, y_end).
+        // Pass 1: horizontal blur of rows [y_start, y_end).
         void* blur_pass1_worker(void* arg)
         {
             auto* a = static_cast<Pass1Args*>(arg);
@@ -82,7 +96,7 @@ namespace Filter
             return nullptr;
         }
 
-        // Pass 2 worker: vertical blur of rows [y_start, y_end).
+        // Pass 2: vertical blur of rows [y_start, y_end).
         void* blur_pass2_worker(void* arg)
         {
             auto* a = static_cast<Pass2Args*>(arg);
@@ -166,22 +180,30 @@ namespace Filter
         const auto h_size = m.get_y_size();
 
         std::vector<unsigned> y_starts, y_ends;
+
+        // Split the image into one contiguous row band per thread. Any leftover
+        // rows go to the first few bands so all rows are covered exactly once.
+
+
         compute_bands(h_size, num_threads, y_starts, y_ends);
 
         std::vector<pthread_t> threads(num_threads);
         std::vector<Pass1Args> a1(num_threads);
         std::vector<Pass2Args> a2(num_threads);
 
-        // ---- Pass 1: horizontal blur, parallel by row bands ----
+        //Pass 1: horizontal blur, parallel by row bands
         for (int i = 0; i < num_threads; ++i)
         {
             a1[i] = { &m, &scratch, radius, w_size, y_starts[i], y_ends[i] };
             pthread_create(&threads[i], nullptr, blur_pass1_worker, &a1[i]);
         }
+        // Barrier: wait for every pass-1 thread to finish before pass 2 starts,
+        // because pass 2 reads from scratch.
+        
         for (int i = 0; i < num_threads; ++i)
             pthread_join(threads[i], nullptr);
 
-        // ---- Pass 2: vertical blur, parallel by row bands ----
+        //Pass 2: vertical blur, parallel by row bands
         for (int i = 0; i < num_threads; ++i)
         {
             a2[i] = { &scratch, &dst, radius, w_size, h_size, y_starts[i], y_ends[i] };
