@@ -1,2 +1,0 @@
-stage,program,input,instruction_refs,instruction_l1_misses,instruction_ll_misses,data_refs,data_l1_misses,data_ll_misses,data_l1_miss_percent,data_ll_miss_percent,branches,branch_mispredicts,branch_mispredict_percent
-opt1,blur,im2.ppm,8356868417,6000,3785,5238225120,106147644,1202873,2.0264,0.0230,204873808,8465401,4.1320

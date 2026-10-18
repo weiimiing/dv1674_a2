@@ -1,16 +1,28 @@
 # C/C++ build products
 *.o
 *.dSYM/
+.DS_Store
 
 # Assignment executables
-versions/*/blur/blur
-versions/*/pearson/pearson
-versions/*/pearson/verify
+assignment_work/versions/*/blur/blur
+assignment_work/versions/*/pearson/pearson
+assignment_work/versions/*/pearson/verify
+assignment_work/versions/parallel/blur/blur_par
+assignment_work/versions/parallel/pearson_par/pearson
+assignment_work/versions/parallel/pearson_par/pearson_par
+assignment_work/versions/parallel/pearson_par/verify
+
+# Prepared submission build products
+group_*/blur/blur
+group_*/blur/blur_par
+group_*/pearson/pearson
+group_*/pearson/pearson_par
+group_*/pearson/verify
 
 # gprof output
 gmon.out
 gmon.out.*
 
 # Program outputs created beside the executables
-versions/*/blur/*.ppm
-versions/*/pearson/output.data
+assignment_work/versions/*/blur/*.ppm
+assignment_work/versions/*/pearson/output.data

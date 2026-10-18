@@ -1,0 +1,5 @@
+program,input,max_rss_kb,direct_elapsed_seconds,user_seconds,system_seconds
+blur,im1.ppm,11748,0.04,0.00,0.00
+blur,im2.ppm,19556,0.17,0.00,0.00
+blur,im3.ppm,32244,0.13,0.04,0.00
+blur,im4.ppm,136060,2.00,0.96,1.03
