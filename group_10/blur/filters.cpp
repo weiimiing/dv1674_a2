@@ -25,80 +25,110 @@ namespace Filter
     Matrix blur(Matrix m, const int radius)
     {
         Matrix scratch{PPM::max_dimension};
-        auto dst{m};
+        Matrix dst{ m.get_x_size(), m.get_y_size(), m.get_color_max() };
 
-        for (auto x{0}; x < dst.get_x_size(); x++)
+        // Weights only depend on radius — compute once, reuse for both passes.
+        double w[Gauss::max_radius]{};
+        Gauss::get_weights(radius, w);
+
+        const auto w_size = dst.get_x_size();
+        const auto h_size = dst.get_y_size();
+
+        // Raw pointers into the pixel buffers. Accessors like m.r(x,y) do
+        // a multiply per call; using pointers directly lets hoist the
+        // row offset once per row and index by x inside the inner loop.
+        const auto* mR = m.get_R();
+        const auto* mG = m.get_G();
+        const auto* mB = m.get_B();
+        auto* sR = scratch.get_R();
+        auto* sG = scratch.get_G();
+        auto* sB = scratch.get_B();
+        auto* dR = dst.get_R();
+        auto* dG = dst.get_G();
+        auto* dB = dst.get_B();
+
+        //horizontal blur
+        
+        for (auto y{0}; y < h_size; y++)
         {
-            for (auto y{0}; y < dst.get_y_size(); y++)
+            const auto row = y * w_size;   // computed once per row, not per pixel
+            for (auto x{0}; x < w_size; x++)
             {
-                double w[Gauss::max_radius]{};
-                Gauss::get_weights(radius, w);
+                const auto idx = row + x;   // byte offset of this pixel's channel value
 
-                // unsigned char Matrix::r(unsigned x, unsigned y) const
-                // {
-                //     return R[y * x_size + x];
-                // }
-
-                auto r{w[0] * dst.r(x, y)}, g{w[0] * dst.g(x, y)}, b{w[0] * dst.b(x, y)}, n{w[0]};
+                auto r{ w[0] * mR[idx] };
+                auto g{ w[0] * mG[idx] };
+                auto b{ w[0] * mB[idx] };
+                auto n{ w[0] };
 
                 for (auto wi{1}; wi <= radius; wi++)
                 {
-                    auto wc{w[wi]};
-                    auto x2{x - wi};
-                    if (x2 >= 0)
+                    const auto wc = w[wi];
+
+                    // Left neighbour, if it eists
+                    if (x >= wi)
                     {
-                        r += wc * dst.r(x2, y);
-                        g += wc * dst.g(x2, y);
-                        b += wc * dst.b(x2, y);
+                        r += wc * mR[row + x - wi];
+                        g += wc * mG[row + x - wi];
+                        b += wc * mB[row + x - wi];
                         n += wc;
                     }
-                    x2 = x + wi;
-                    if (x2 < dst.get_x_size())
+                    // Right neighbour, if it exists
+                    if (x + wi < w_size)
                     {
-                        r += wc * dst.r(x2, y);
-                        g += wc * dst.g(x2, y);
-                        b += wc * dst.b(x2, y);
+                        r += wc * mR[row + x + wi];
+                        g += wc * mG[row + x + wi];
+                        b += wc * mB[row + x + wi];
                         n += wc;
                     }
                 }
-                scratch.r(x, y) = r / n;
-                scratch.g(x, y) = g / n;
-                scratch.b(x, y) = b / n;
+
+                sR[idx] = r / n;
+                sG[idx] = g / n;
+                sB[idx] = b / n;
             }
         }
 
-        for (auto x{0}; x < dst.get_x_size(); x++)
+        //vertical blur 
+        for (auto y{0}; y < h_size; y++)
         {
-            for (auto y{0}; y < dst.get_y_size(); y++)
+            const auto row = y * w_size;
+            for (auto x{0}; x < w_size; x++)
             {
-                double w[Gauss::max_radius]{};
-                Gauss::get_weights(radius, w);
+                const auto idx = row + x;
 
-                auto r{w[0] * scratch.r(x, y)}, g{w[0] * scratch.g(x, y)}, b{w[0] * scratch.b(x, y)}, n{w[0]};
+                auto r{ w[0] * sR[idx] };
+                auto g{ w[0] * sG[idx] };
+                auto b{ w[0] * sB[idx] };
+                auto n{ w[0] };
 
                 for (auto wi{1}; wi <= radius; wi++)
                 {
-                    auto wc{w[wi]};
-                    auto y2{y - wi};
-                    if (y2 >= 0)
+                    const auto wc = w[wi];
+
+                    // Top neighbour: same column, wi rows up
+                    if (y >= wi)
                     {
-                        r += wc * scratch.r(x, y2);
-                        g += wc * scratch.g(x, y2);
-                        b += wc * scratch.b(x, y2);
+                        const auto off = row + x - wi * w_size;
+                        r += wc * sR[off];
+                        g += wc * sG[off];
+                        b += wc * sB[off];
                         n += wc;
                     }
-                    y2 = y + wi;
-                    if (y2 < dst.get_y_size())
+                    // Bottom neighbour: same column, wi rows down.
+                    if (y + wi < h_size)
                     {
-                        r += wc * scratch.r(x, y2);
-                        g += wc * scratch.g(x, y2);
-                        b += wc * scratch.b(x, y2);
+                        const auto off = row + x + wi * w_size;
+                        r += wc * sR[off];
+                        g += wc * sG[off];
+                        b += wc * sB[off];
                         n += wc;
                     }
                 }
-                dst.r(x, y) = r / n;
-                dst.g(x, y) = g / n;
-                dst.b(x, y) = b / n;
+
+                dR[idx] = r / n;
+                dG[idx] = g / n;
+                dB[idx] = b / n;
             }
         }
 
