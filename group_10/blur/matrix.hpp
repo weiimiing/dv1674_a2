@@ -20,7 +20,7 @@ private:
 public:
     Matrix();
     Matrix(unsigned dimension);
-    Matrix(const Matrix& other);
+    Matrix(unsigned x_size, unsigned y_size, unsigned color_max);    Matrix(const Matrix& other);
     Matrix(unsigned char* R, unsigned char* G, unsigned char* B, unsigned x_size, unsigned y_size, unsigned color_max);
     Matrix& operator=(const Matrix other);
     ~Matrix();
@@ -32,6 +32,11 @@ public:
     unsigned char const* get_R() const;
     unsigned char const* get_G() const;
     unsigned char const* get_B() const;
+
+    // Non-const overloads needed to write directly into a Matrix's pixel buffer
+    unsigned char* get_R();
+    unsigned char* get_G();
+    unsigned char* get_B();
 
     unsigned char r(unsigned x, unsigned y) const;
     unsigned char g(unsigned x, unsigned y) const;

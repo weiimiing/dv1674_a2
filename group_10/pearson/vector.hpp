@@ -19,8 +19,8 @@ public:
 
     double magnitude() const;
     double mean() const;
-    double normalize() const;
-    double dot(Vector rhs) const;
+    void normalize();
+    double dot(const Vector& rhs) const;
 
     unsigned get_size() const;
     double* get_data();

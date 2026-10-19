@@ -103,7 +103,24 @@ Vector Vector::operator-(double sub)
     return result;
 }
 
-double Vector::dot(Vector rhs) const
+void Vector:: normalize(){
+    // The mean is constant for every element in this vector.
+    const double average = mean();
+
+    // Centre the vector so its mean becomes approximately zero.
+    for (unsigned i = 0; i < size; ++i) {
+        data[i] -= average;
+    }
+    // Calculate the magnitude after the values have been centred.
+     const double magnitude_value = magnitude();
+    // Scale the centred vector so its magnitude becomes one.
+    for (unsigned i = 0; i < size; ++i) {
+        data[i] /= magnitude_value;
+    }
+}
+
+
+double Vector::dot(const Vector& rhs) const
 {
     double result{0};
 

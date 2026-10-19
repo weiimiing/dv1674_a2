@@ -171,15 +171,27 @@ namespace Analysis
         return results;
     }
 
-    std::vector<double> correlation_coefficients(std::vector<Vector> datasets)
+  std::vector<double> correlation_coefficients(std::vector<Vector> datasets)
     {
-        std::vector<double> result{};
+        // Normalize every dataset once before processing any pairs.
+        for (auto &dataset : datasets)
+        {
+            dataset.normalize();
+        }
 
+        std::vector<double> result{};
+        // Process every unique pair in the same order as the baseline.
         for (auto sample1{0}; sample1 < datasets.size() - 1; sample1++)
         {
             for (auto sample2{sample1 + 1}; sample2 < datasets.size(); sample2++)
             {
-                auto corr{pearson(datasets[sample1], datasets[sample2])};
+                // The Pearson correlation of two normalized vectors is their dot product.
+                auto r{datasets[sample1].dot(datasets[sample2])};
+                
+                // Keep the result within the valid correlation range.
+                // Correct possible floating-point values just outside [-1, 1].
+                auto corr{std::max(std::min(r, 1.0), -1.0)};
+
                 result.push_back(corr);
             }
         }
